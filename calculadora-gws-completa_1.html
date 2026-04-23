@@ -6,67 +6,26 @@
 <title>Calculadora GWS — servinformación Brasil</title>
 <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,wght@0,300;0,400;0,500;0,600;1,400&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
 <style>
-:root {
-  --bg: #F2F0EC;
-  --surface: #FFFFFF;
-  --surface2: #F8F7F4;
-  --border: #E4E0D8;
-  --border2: #CCC8BF;
-  --text: #1A1714;
-  --text2: #6B6560;
-  --text3: #9E9890;
-  --blue: #1A5CFF;
-  --blue-dark: #1240CC;
-  --blue-bg: #EEF2FF;
-  --blue-border: #C5D4FF;
-  --green: #0D8A4E;
-  --green-bg: #E6F5EE;
-  --green-border: #B3DDCA;
-  --green-text: #0A6B3C;
-  --amber: #C07A00;
-  --amber-bg: #FFF4E0;
-  --amber-border: #FFD988;
-  --amber-text: #9A6000;
-  --red: #CC2C2C;
-  --red-bg: #FDEAEA;
-  --red-text: #A32222;
-  --purple: #6B3FBF;
-  --purple-bg: #F0EBFF;
-  --purple-border: #D4C5F9;
-  --purple-text: #4E2E99;
-  --r: 10px;
-  --rlg: 16px;
-}
+:root{--bg:#F2F0EC;--surface:#FFFFFF;--surface2:#F8F7F4;--border:#E4E0D8;--border2:#CCC8BF;--text:#1A1714;--text2:#6B6560;--text3:#9E9890;--blue:#1A5CFF;--blue-dark:#1240CC;--blue-bg:#EEF2FF;--blue-border:#C5D4FF;--green:#0D8A4E;--green-bg:#E6F5EE;--green-border:#B3DDCA;--green-text:#0A6B3C;--amber:#C07A00;--amber-bg:#FFF4E0;--amber-border:#FFD988;--amber-text:#9A6000;--red:#CC2C2C;--red-bg:#FDEAEA;--red-text:#A32222;--purple:#6B3FBF;--purple-bg:#F0EBFF;--purple-border:#D4C5F9;--purple-text:#4E2E99;--r:10px;--rlg:16px;}
 *{box-sizing:border-box;margin:0;padding:0;}
 body{font-family:'DM Sans',sans-serif;background:var(--bg);color:var(--text);font-size:14px;line-height:1.6;min-height:100vh;}
 .app{max-width:980px;margin:0 auto;padding:2rem 1.5rem 5rem;}
-
-/* HEADER */
 .topbar{display:flex;align-items:center;justify-content:space-between;margin-bottom:2rem;flex-wrap:wrap;gap:1rem;}
 .brand{display:flex;align-items:center;gap:10px;}
 .brand-logo{width:36px;height:36px;background:var(--blue);border-radius:8px;display:flex;align-items:center;justify-content:center;color:#fff;font-weight:700;font-size:14px;}
-.brand-name{font-size:13px;font-weight:600;color:var(--text);letter-spacing:-0.2px;}
+.brand-name{font-size:13px;font-weight:600;}
 .brand-sub{font-size:11px;color:var(--text3);}
 .topbar-right{font-size:12px;color:var(--text3);}
-
-/* STEPS */
 .steps{display:flex;gap:4px;margin-bottom:1.5rem;overflow-x:auto;padding-bottom:4px;}
 .step-btn{display:flex;align-items:center;gap:6px;padding:7px 14px;border-radius:20px;font-size:12px;font-weight:500;cursor:pointer;border:1.5px solid var(--border2);background:var(--surface);color:var(--text2);transition:all .15s;white-space:nowrap;flex-shrink:0;}
 .step-btn:hover{border-color:var(--blue);color:var(--blue);}
 .step-btn.active{background:var(--blue);color:#fff;border-color:var(--blue);}
 .step-btn.done{background:var(--green-bg);color:var(--green-text);border-color:var(--green);}
 .step-num{font-family:'DM Mono',monospace;font-size:10px;opacity:.7;}
-
-/* CARD */
 .card{background:var(--surface);border:1px solid var(--border);border-radius:var(--rlg);padding:1.75rem;margin-bottom:1rem;}
-.card-title{font-size:17px;font-weight:600;color:var(--text);margin-bottom:1.5rem;display:flex;align-items:center;gap:10px;}
+.card-title{font-size:17px;font-weight:600;margin-bottom:1.5rem;display:flex;align-items:center;gap:10px;}
 .card-icon{width:30px;height:30px;border-radius:8px;background:var(--blue-bg);display:flex;align-items:center;justify-content:center;font-size:15px;flex-shrink:0;}
-
-/* SECTION */
 .sec-label{font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:.8px;color:var(--text3);margin:1.25rem 0 .75rem;padding-bottom:6px;border-bottom:1px solid var(--border);}
-.sec-label:first-child{margin-top:0;}
-
-/* FIELDS */
 .fg{display:grid;grid-template-columns:repeat(auto-fit,minmax(190px,1fr));gap:.875rem;margin-bottom:.875rem;}
 .field{display:flex;flex-direction:column;gap:5px;}
 .field label{font-size:11px;font-weight:600;text-transform:uppercase;letter-spacing:.4px;color:var(--text2);}
@@ -75,28 +34,23 @@ body{font-family:'DM Sans',sans-serif;background:var(--bg);color:var(--text);fon
 .field input[type=number]{font-family:'DM Mono',monospace;}
 .field .hint{font-size:11px;color:var(--text3);}
 .field textarea{resize:vertical;min-height:70px;}
-
-/* TABLE */
 .tbl{width:100%;border-collapse:collapse;font-size:13px;}
 .tbl th{text-align:left;font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:.4px;color:var(--text3);padding:6px 8px;border-bottom:1px solid var(--border);}
 .tbl td{padding:5px 4px;vertical-align:middle;border-bottom:1px dashed var(--border);}
 .tbl tr:last-child td{border-bottom:none;}
-.tbl input,.tbl select{width:100%;padding:6px 8px;border:1px solid transparent;border-radius:6px;font-size:12px;font-family:'DM Mono',monospace;background:transparent;color:var(--text);transition:all .15s;}
-.tbl input[type=text],.tbl select{font-family:'DM Sans',sans-serif;}
+.tbl input,.tbl select{width:100%;padding:6px 8px;border:1px solid transparent;border-radius:6px;font-size:12px;background:transparent;color:var(--text);transition:all .15s;font-family:'DM Sans',sans-serif;}
 .tbl input:hover,.tbl select:hover{border-color:var(--border);}
 .tbl input:focus,.tbl select:focus{outline:none;border-color:var(--blue);background:var(--surface2);}
 .del-btn{width:26px;height:26px;border:none;background:none;cursor:pointer;color:var(--text3);border-radius:6px;font-size:16px;display:flex;align-items:center;justify-content:center;transition:all .15s;}
 .del-btn:hover{background:var(--red-bg);color:var(--red);}
 .add-btn{display:flex;align-items:center;gap:6px;padding:7px 13px;border:1.5px dashed var(--border2);border-radius:var(--r);background:none;color:var(--text2);font-size:12px;cursor:pointer;transition:all .15s;font-family:'DM Sans',sans-serif;margin-top:6px;}
 .add-btn:hover{border-color:var(--blue);color:var(--blue);background:var(--blue-bg);}
-
-/* PANELS */
 .panel{border-radius:var(--r);padding:1rem 1.25rem;margin-top:1rem;}
 .panel.blue{background:var(--blue-bg);border:1px solid var(--blue-border);}
 .panel.green{background:var(--green-bg);border:1px solid var(--green-border);}
 .panel.amber{background:var(--amber-bg);border:1px solid var(--amber-border);}
 .panel.purple{background:var(--purple-bg);border:1px solid var(--purple-border);}
-.panel-title{font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:.5px;margin-bottom:10px;display:flex;align-items:center;gap:6px;}
+.panel-title{font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:.5px;margin-bottom:10px;}
 .panel.blue .panel-title{color:var(--blue-dark);}
 .panel.green .panel-title{color:var(--green-text);}
 .panel.amber .panel-title{color:var(--amber-text);}
@@ -111,8 +65,6 @@ body{font-family:'DM Sans',sans-serif;background:var(--bg);color:var(--text);fon
 .panel.amber .prow .v{font-weight:600;color:var(--amber-text);font-family:'DM Mono',monospace;font-size:12px;}
 .panel.purple .prow .k{color:var(--purple-text);opacity:.8;}
 .panel.purple .prow .v{font-weight:600;color:var(--purple-text);font-family:'DM Mono',monospace;font-size:12px;}
-
-/* METRICS */
 .mg{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:10px;margin-bottom:1.25rem;}
 .mc{border-radius:var(--r);padding:.875rem;}
 .mc.default{background:var(--surface2);border:1px solid var(--border);}
@@ -120,19 +72,17 @@ body{font-family:'DM Sans',sans-serif;background:var(--bg);color:var(--text);fon
 .mc.green{background:var(--green-bg);border:1px solid var(--green-border);}
 .mc.amber{background:var(--amber-bg);border:1px solid var(--amber-border);}
 .mc.purple{background:var(--purple-bg);border:1px solid var(--purple-border);}
-.mc .ml{font-size:11px;color:var(--text2);margin-bottom:3px;font-weight:500;}
+.mc .ml{font-size:11px;margin-bottom:3px;font-weight:500;}
 .mc.blue .ml{color:var(--blue-dark);}
 .mc.green .ml{color:var(--green-text);}
 .mc.amber .ml{color:var(--amber-text);}
 .mc.purple .ml{color:var(--purple-text);}
-.mc .mv{font-size:21px;font-weight:600;color:var(--text);letter-spacing:-.5px;}
+.mc .mv{font-size:21px;font-weight:600;letter-spacing:-.5px;}
 .mc.blue .mv{color:var(--blue-dark);}
 .mc.green .mv{color:var(--green-text);}
 .mc.amber .mv{color:var(--amber-text);}
 .mc.purple .mv{color:var(--purple-text);}
 .mc .ms{font-size:11px;color:var(--text3);margin-top:2px;}
-
-/* BREAKDOWN */
 .bd{border:1px solid var(--border);border-radius:var(--r);overflow:hidden;margin-bottom:1.25rem;}
 .bd-hdr{padding:7px 14px;background:var(--surface2);font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:.5px;color:var(--text3);border-bottom:1px solid var(--border);}
 .bd-row{display:flex;justify-content:space-between;align-items:center;padding:9px 14px;border-bottom:1px dashed var(--border);font-size:13px;}
@@ -141,34 +91,23 @@ body{font-family:'DM Sans',sans-serif;background:var(--bg);color:var(--text);fon
 .bd-row .bn{color:var(--text2);}
 .bd-row .bv{font-family:'DM Mono',monospace;font-size:12px;font-weight:500;color:var(--text);}
 .bd-row.total .bv{color:var(--blue);}
-
-/* TAGS */
-.tag{display:inline-block;padding:2px 8px;border-radius:20px;font-size:10px;font-weight:600;letter-spacing:.2px;}
+.tag{display:inline-block;padding:2px 8px;border-radius:20px;font-size:10px;font-weight:600;}
 .tag.ok{background:var(--green-bg);color:var(--green-text);}
 .tag.warn{background:var(--amber-bg);color:var(--amber-text);}
 .tag.info{background:var(--blue-bg);color:var(--blue-dark);}
 .tag.purple{background:var(--purple-bg);color:var(--purple-text);}
-
-/* NAV */
 .nav-row{display:flex;justify-content:space-between;align-items:center;margin-top:1.5rem;padding-top:1.25rem;border-top:1px solid var(--border);}
 .btn{padding:9px 20px;border-radius:var(--r);font-size:13px;font-weight:500;cursor:pointer;font-family:'DM Sans',sans-serif;border:1.5px solid var(--border2);background:var(--surface);color:var(--text2);transition:all .15s;}
 .btn:hover{border-color:var(--text2);color:var(--text);}
 .btn.primary{background:var(--blue);border-color:var(--blue);color:#fff;}
-.btn.primary:hover{background:var(--blue-dark);border-color:var(--blue-dark);}
-.btn.green{background:var(--green);border-color:var(--green);color:#fff;}
-.btn.green:hover{background:var(--green-text);border-color:var(--green-text);}
+.btn.primary:hover{background:var(--blue-dark);}
 .btn.purple{background:var(--purple);border-color:var(--purple);color:#fff;}
-.btn.purple:hover{background:var(--purple-text);border-color:var(--purple-text);}
+.btn.purple:hover{background:var(--purple-text);}
 .btn-group{display:flex;gap:8px;flex-wrap:wrap;}
-
-/* ALERT */
 .alert{padding:10px 14px;border-radius:var(--r);font-size:12px;margin-bottom:1rem;}
 .alert.warn{background:var(--amber-bg);color:var(--amber-text);border:1px solid var(--amber-border);}
 .alert.info{background:var(--blue-bg);color:var(--blue-dark);border:1px solid var(--blue-border);}
 .alert.success{background:var(--green-bg);color:var(--green-text);border:1px solid var(--green-border);}
-
-/* TRAINING CARDS */
-.train-cards{display:grid;grid-template-columns:1fr 1fr;gap:1rem;margin-top:1rem;}
 .train-card{border:2px solid var(--border);border-radius:var(--rlg);padding:1.25rem;cursor:pointer;transition:all .15s;position:relative;}
 .train-card:hover{border-color:var(--blue);background:var(--blue-bg);}
 .train-card.selected{border-color:var(--blue);background:var(--blue-bg);}
@@ -176,61 +115,32 @@ body{font-family:'DM Sans',sans-serif;background:var(--bg);color:var(--text);fon
 .train-card .tc-badge{font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:.5px;margin-bottom:8px;}
 .train-card.selected .tc-badge{color:var(--blue-dark);}
 .train-card.selected-premium .tc-badge{color:var(--purple-text);}
-.train-card .tc-price{font-size:22px;font-weight:700;color:var(--text);letter-spacing:-.5px;margin-bottom:6px;}
+.train-card .tc-price{font-size:22px;font-weight:700;letter-spacing:-.5px;margin-bottom:6px;}
 .train-card .tc-details{font-size:12px;color:var(--text2);line-height:1.7;}
 .train-card .tc-check{position:absolute;top:12px;right:12px;width:20px;height:20px;border-radius:50%;border:2px solid var(--border2);display:flex;align-items:center;justify-content:center;font-size:10px;}
 .train-card.selected .tc-check{background:var(--blue);border-color:var(--blue);color:#fff;}
 .train-card.selected-premium .tc-check{background:var(--purple);border-color:var(--purple);color:#fff;}
-
-/* RESUMO INFO */
 .ri-bar{display:flex;gap:1.5rem;flex-wrap:wrap;margin-bottom:1.5rem;padding:12px 16px;background:var(--surface2);border-radius:var(--r);border:1px solid var(--border);font-size:13px;}
 .ri{display:flex;flex-direction:column;gap:2px;}
 .ri-label{font-size:10px;text-transform:uppercase;letter-spacing:.5px;color:var(--text3);font-weight:700;}
-.ri-val{font-weight:500;color:var(--text);}
-
-/* MODAL PROPOSTA */
-.modal-bg{display:none;position:fixed;inset:0;background:rgba(0,0,0,.45);z-index:100;align-items:center;justify-content:center;}
-.modal-bg.open{display:flex;}
-.modal{background:var(--surface);border-radius:var(--rlg);padding:2rem;max-width:520px;width:90%;border:1px solid var(--border);}
-.modal h2{font-size:18px;font-weight:600;margin-bottom:.5rem;}
-.modal p{font-size:13px;color:var(--text2);margin-bottom:1.5rem;}
-.modal .btn-group{justify-content:flex-end;}
-
-/* PAGE */
+.ri-val{font-weight:500;}
 .page{display:none;}
 .page.active{display:block;}
-
 hr{border:none;border-top:1px solid var(--border);margin:1.25rem 0;}
-
-@media(max-width:600px){
-  .app{padding:1rem 1rem 4rem;}
-  .train-cards{grid-template-columns:1fr;}
-  .fg{grid-template-columns:1fr;}
-  .topbar{flex-direction:column;align-items:flex-start;}
-}
-@media print{
-  .steps,.nav-row,.topbar-right,.modal-bg{display:none!important;}
-  .page{display:block!important;}
-  .card{page-break-inside:avoid;margin-bottom:1.5rem;box-shadow:none;}
-  body{background:#fff;}
-}
+@media(max-width:600px){.app{padding:1rem 1rem 4rem;}.fg{grid-template-columns:1fr;}.topbar{flex-direction:column;align-items:flex-start;}}
+@media print{.steps,.nav-row,.topbar-right{display:none!important;}.page{display:block!important;}.card{page-break-inside:avoid;}body{background:#fff;}}
 </style>
 </head>
 <body>
 <div class="app">
-
 <div class="topbar">
   <div class="brand">
     <div class="brand-logo">S</div>
-    <div>
-      <div class="brand-name">servinformación Brasil</div>
-      <div class="brand-sub">Calculadora de Migração Google Workspace</div>
-    </div>
+    <div><div class="brand-name">servinformación Brasil</div><div class="brand-sub">Calculadora de Migração Google Workspace</div></div>
   </div>
   <div class="topbar-right" id="topDate"></div>
 </div>
-
-<div class="steps" id="stepsNav">
+<div class="steps">
   <div class="step-btn active" onclick="goTo(0)"><span class="step-num">01</span> Projeto</div>
   <div class="step-btn" onclick="goTo(1)"><span class="step-num">02</span> Ambientes</div>
   <div class="step-btn" onclick="goTo(2)"><span class="step-num">03</span> Migração</div>
@@ -240,30 +150,27 @@ hr{border:none;border-top:1px solid var(--border);margin:1.25rem 0;}
   <div class="step-btn" onclick="goTo(6)"><span class="step-num">07</span> Resumo</div>
 </div>
 
-<!-- PAGE 1: PROJETO -->
 <div class="page active" id="page0">
 <div class="card">
   <div class="card-title"><div class="card-icon">👤</div> Informações do projeto</div>
-
   <div class="sec-label">Vendedor</div>
   <div class="fg">
     <div class="field"><label>Nome do vendedor</label><input id="vendedor" type="text" placeholder="Ex: Patricia Monreal"></div>
     <div class="field"><label>E-mail do vendedor</label><input id="emailVendedor" type="email" placeholder="Ex: patricia@servinformacion.com"></div>
   </div>
-
   <div class="sec-label">Cliente</div>
   <div class="fg">
     <div class="field"><label>Nome da empresa</label><input id="cliente" type="text" placeholder="Ex: Empresa ABC"></div>
     <div class="field"><label>Domínio principal</label><input id="dominio" type="text" placeholder="Ex: empresa.com.br"></div>
   </div>
   <div class="fg">
-    <div class="field"><label>Responsável no cliente</label><input id="contato" type="text" placeholder="Ex: Bruno Alves Rocha"></div>
+    <div class="field"><label>Responsável no cliente</label><input id="contato" type="text" placeholder="Ex: João Silva"></div>
     <div class="field"><label>E-mail do contato</label><input id="emailContato" type="email" placeholder="Ex: contato@empresa.com.br"></div>
   </div>
   <div class="fg">
     <div class="field"><label>Número de usuários</label><input id="usuarios" type="number" min="1" value="" oninput="calc()"></div>
     <div class="field"><label>Número de domínios</label><input id="numDominios" type="number" min="1" value="" oninput="calc()"></div>
-    <div class="field"><label>Câmbio USD/BRL</label><input id="cambio" type="number" step="0.01" value="" oninput="calc()"></div>
+    <div class="field"><label>Câmbio USD/BRL</label><input id="cambio" type="number" step="0.01" value="" placeholder="5.90" oninput="calc()"></div>
   </div>
   <div class="fg">
     <div class="field"><label>Plataforma de origem</label>
@@ -275,60 +182,38 @@ hr{border:none;border-top:1px solid var(--border);margin:1.25rem 0;}
         <option value="outros">Outro</option>
       </select>
     </div>
-    <div class="field"><label>Validade da proposta</label><input id="validade" type="number" min="1" value=""> <span class="hint">dias</span></div>
+    <div class="field"><label>Validade da proposta (dias)</label><input id="validade" type="number" min="1" value="" placeholder="Ex: 15"></div>
   </div>
-
-  <div class="nav-row">
-    <span></span>
-    <button class="btn primary" onclick="goTo(1)">Ambientes →</button>
-  </div>
+  <div class="nav-row"><span></span><button class="btn primary" onclick="goTo(1)">Ambientes →</button></div>
 </div>
 </div>
 
-<!-- PAGE 2: AMBIENTES -->
 <div class="page" id="page1">
 <div class="card">
   <div class="card-title"><div class="card-icon">🗄️</div> Ambientes a migrar</div>
-  <div class="alert info">Adicione todos os ambientes/fontes de dados que serão migrados. O total de GB é usado para calcular o custo de migração.</div>
-
-  <table class="tbl" id="envTable">
-    <thead>
-      <tr>
-        <th style="width:28%">Ambiente / Fonte</th>
-        <th style="width:20%">Tipo</th>
-        <th style="width:8%;text-align:right">Valor</th>
-        <th style="width:7%">Unidade</th>
-        <th style="width:15%">Migrar?</th>
-        <th style="width:20%">Observação</th>
-        <th style="width:5%"></th>
-      </tr>
-    </thead>
-    <tbody id="envBody"></tbody>
-  </table>
+  <div class="alert info">Adicione todos os ambientes/fontes de dados que serão migrados.</div>
+  <table class="tbl"><thead><tr>
+    <th style="width:28%">Ambiente / Fonte</th><th style="width:20%">Tipo</th>
+    <th style="width:8%;text-align:right">Valor</th><th style="width:7%">Unidade</th>
+    <th style="width:15%">Migrar?</th><th style="width:20%">Observação</th><th style="width:5%"></th>
+  </tr></thead><tbody id="envBody"></tbody></table>
   <button class="add-btn" onclick="addEnvRow()">+ Adicionar ambiente</button>
-
   <div class="panel blue" style="margin-top:1.25rem;">
-    <div class="panel-title">📦 Totais identificados</div>
-    <div class="prow"><span class="k">Total geral (GB)</span><span class="v" id="p2TotalAll">—</span></div>
-    <div class="prow"><span class="k">Total a migrar (GB)</span><span class="v" id="p2TotalMig">—</span></div>
+    <div class="panel-title">📦 Totais</div>
+    <div class="prow"><span class="k">Total geral</span><span class="v" id="p2TotalAll">—</span></div>
+    <div class="prow"><span class="k">Total a migrar</span><span class="v" id="p2TotalMig">—</span></div>
     <div class="prow"><span class="k">Ambientes cadastrados</span><span class="v" id="p2Amb">—</span></div>
   </div>
-
-  <div class="nav-row">
-    <button class="btn" onclick="goTo(0)">← Projeto</button>
-    <button class="btn primary" onclick="goTo(2)">Migração →</button>
-  </div>
+  <div class="nav-row"><button class="btn" onclick="goTo(0)">← Projeto</button><button class="btn primary" onclick="goTo(2)">Migração →</button></div>
 </div>
 </div>
 
-<!-- PAGE 3: MIGRAÇÃO -->
 <div class="page" id="page2">
 <div class="card">
   <div class="card-title"><div class="card-icon">☁️</div> Tipo e custo de migração</div>
-
   <div class="sec-label">Tipo de migração</div>
   <div class="fg">
-    <div class="field"><label>Método de migração</label>
+    <div class="field"><label>Método</label>
       <select id="migTipo" onchange="toggleMigType();calc()">
         <option value="cloudm">CloudM (Microsoft 365 / Google)</option>
         <option value="imap">IMAP (por hora)</option>
@@ -338,18 +223,17 @@ hr{border:none;border-top:1px solid var(--border);margin:1.25rem 0;}
     <div class="field"><label>Migrar chat Teams (via API)?</label>
       <select id="migChat" onchange="calc()">
         <option value="">Não incluir</option>
-        <option value="1">Sim — incluir estimativa de desenvolvimento</option>
+        <option value="1">Sim — incluir estimativa</option>
       </select>
     </div>
   </div>
-
   <div id="blockCloudm">
     <div class="sec-label">CloudM — parâmetros</div>
     <div class="fg">
-      <div class="field"><label>GB por licença CloudM</label><input id="cloudmGb" type="number" min="1" value="" oninput="calc()"><span class="hint">Padrão: 10 GB/licença</span></div>
-      <div class="field"><label>Preço por licença (USD)</label><input id="cloudmPreco" type="number" step="0.01" value="" oninput="calc()"><span class="hint">Padrão: USD 14,00</span></div>
+      <div class="field"><label>GB por licença CloudM</label><input id="cloudmGb" type="number" min="1" value="" placeholder="10" oninput="calc()"><span class="hint">Padrão: 10 GB/licença</span></div>
+      <div class="field"><label>Preço por licença (USD)</label><input id="cloudmPreco" type="number" step="0.01" value="" placeholder="14" oninput="calc()"><span class="hint">Padrão: USD 14,00</span></div>
     </div>
-    <div class="panel blue" id="panelCloudm">
+    <div class="panel blue">
       <div class="panel-title">☁️ Resultado CloudM</div>
       <div class="prow"><span class="k">Total a migrar (GB)</span><span class="v" id="cmGb">—</span></div>
       <div class="prow"><span class="k">Licenças necessárias</span><span class="v" id="cmLics">—</span></div>
@@ -357,143 +241,99 @@ hr{border:none;border-top:1px solid var(--border);margin:1.25rem 0;}
       <div class="prow"><span class="k">Custo bruto (BRL)</span><span class="v" id="cmBrl">—</span></div>
     </div>
   </div>
-
   <div id="blockImap" style="display:none;">
     <div class="sec-label">IMAP — parâmetros</div>
     <div class="alert info">Referência: 50 GB ≈ 1 dia de migração (8h). Taxa: R$ 250/hora.</div>
     <div class="fg">
       <div class="field"><label>GB a migrar via IMAP</label><input id="imapGb" type="number" step="0.01" value="" oninput="calc()"></div>
-      <div class="field"><label>Taxa horária (R$)</label><input id="imapTaxa" type="number" value="" oninput="calc()"><span class="hint">Padrão: R$ 250/hora</span></div>
+      <div class="field"><label>Taxa horária (R$)</label><input id="imapTaxa" type="number" value="" placeholder="250" oninput="calc()"></div>
     </div>
-    <div class="panel amber" id="panelImap">
+    <div class="panel amber">
       <div class="panel-title">⏱️ Resultado IMAP</div>
       <div class="prow"><span class="k">GB via IMAP</span><span class="v" id="imGb">—</span></div>
-      <div class="prow"><span class="k">Dias estimados (50 GB/dia)</span><span class="v" id="imDias">—</span></div>
-      <div class="prow"><span class="k">Horas estimadas (8h/dia)</span><span class="v" id="imHoras">—</span></div>
+      <div class="prow"><span class="k">Dias estimados</span><span class="v" id="imDias">—</span></div>
+      <div class="prow"><span class="k">Horas estimadas</span><span class="v" id="imHoras">—</span></div>
       <div class="prow"><span class="k">Custo IMAP (BRL)</span><span class="v" id="imCusto">—</span></div>
     </div>
   </div>
-
   <div id="blockChat" style="display:none;">
     <div class="sec-label">Chat Teams via API</div>
     <div class="fg">
-      <div class="field"><label>Horas estimadas de dev.</label><input id="chatHoras" type="number" value="" oninput="calc()"><span class="hint">Referência: 20–40h para 50 usuários</span></div>
-      <div class="field"><label>Taxa horária dev. (R$)</label><input id="chatTaxa" type="number" value="" oninput="calc()"></div>
+      <div class="field"><label>Horas estimadas de dev.</label><input id="chatHoras" type="number" value="" placeholder="30" oninput="calc()"><span class="hint">Ref: 20–40h para 50 usuários</span></div>
+      <div class="field"><label>Taxa horária dev. (R$)</label><input id="chatTaxa" type="number" value="" placeholder="250" oninput="calc()"></div>
     </div>
     <div class="panel amber">
-      <div class="panel-title">💬 Estimativa migração de chat</div>
+      <div class="panel-title">💬 Estimativa chat</div>
       <div class="prow"><span class="k">Horas de desenvolvimento</span><span class="v" id="chatHorasOut">—</span></div>
       <div class="prow"><span class="k">Custo estimado (BRL)</span><span class="v" id="chatCusto">—</span></div>
     </div>
   </div>
-
   <div class="sec-label">Margem de serviço</div>
   <div class="fg">
-    <div class="field"><label>Margem sobre migração (%)</label><input id="margemMig" type="number" min="0" max="100" value="" oninput="calc()"><span class="hint">Adicionada ao custo total de migração</span></div>
+    <div class="field"><label>Margem sobre migração (%)</label><input id="margemMig" type="number" min="0" max="100" value="" oninput="calc()"></div>
   </div>
-
   <div class="panel green">
     <div class="panel-title">✅ Total de migração</div>
     <div class="prow"><span class="k">Subtotal migração (BRL)</span><span class="v" id="migSub">—</span></div>
     <div class="prow" id="migMargemRow" style="display:none"><span class="k">+ Margem de serviço</span><span class="v" id="migMargem">—</span></div>
     <div class="prow"><span class="k">Total migração (BRL)</span><span class="v" id="migTotal">—</span></div>
   </div>
-
-  <div class="nav-row">
-    <button class="btn" onclick="goTo(1)">← Ambientes</button>
-    <button class="btn primary" onclick="goTo(3)">Licenças →</button>
-  </div>
+  <div class="nav-row"><button class="btn" onclick="goTo(1)">← Ambientes</button><button class="btn primary" onclick="goTo(3)">Licenças →</button></div>
 </div>
 </div>
 
-<!-- PAGE 4: LICENÇAS -->
 <div class="page" id="page3">
 <div class="card">
   <div class="card-title"><div class="card-icon">🔑</div> Licenças Google Workspace</div>
-
   <div class="sec-label">Microsoft 365 atual (comparativo)</div>
   <div class="fg">
     <div class="field"><label>Lic. Microsoft Basic (qtd.)</label><input id="msBasic" type="number" min="0" value="" oninput="calc()"><span class="hint">USD 6,00/usuário</span></div>
     <div class="field"><label>Lic. Microsoft Standard (qtd.)</label><input id="msStandard" type="number" min="0" value="" oninput="calc()"><span class="hint">USD 12,50/usuário</span></div>
     <div class="field"><label>Custo atual M365 (BRL/mês)</label><input id="msCustoManual" type="number" value="" oninput="calc()"><span class="hint">Informe o valor real pago</span></div>
   </div>
-
-  <div class="sec-label">Mix de licenças Google Workspace — Business</div>
-  <div class="alert info">Preços oficiais Google Brasil (outubro 2025). Adicione sua margem no campo abaixo.</div>
-
+  <div class="sec-label">Business</div>
+  <div class="alert warn">⚠️ Licenças Business têm limite máximo de 300 usuários.</div>
   <table class="tbl">
-    <thead>
-      <tr>
-        <th>Plano</th>
-        <th>Armazenamento</th>
-        <th>Gemini</th>
-        <th style="text-align:right">BRL/usuário</th>
-        <th style="text-align:right;width:110px">Qtd. usuários</th>
-      </tr>
-    </thead>
+    <thead><tr><th>Plano</th><th>Armazenamento</th><th>Meet</th><th style="text-align:right">BRL/usuário</th><th style="text-align:right;width:100px">Qtd.</th></tr></thead>
     <tbody>
-      <tr><td>Business Starter</td><td><span class="tag warn">30 GB</span></td><td>—</td><td style="text-align:right;font-family:'DM Mono',monospace;color:var(--text2)">R$ 40,90</td><td><input id="lBizS" type="number" min="0" value="" oninput="calc()" style="text-align:right"></td></tr>
-      <tr><td>Business Standard</td><td><span class="tag ok">2 TB</span></td><td><span class="tag info">Gemini Pro</span></td><td style="text-align:right;font-family:'DM Mono',monospace;color:var(--text2)">R$ 81,80</td><td><input id="lBizSt" type="number" min="0" value="" oninput="calc()" style="text-align:right"></td></tr>
-      <tr><td>Business Plus</td><td><span class="tag ok">5 TB</span></td><td><span class="tag info">Gemini Pro</span></td><td style="text-align:right;font-family:'DM Mono',monospace;color:var(--text2)">R$ 128,40</td><td><input id="lBizP" type="number" min="0" value="" oninput="calc()" style="text-align:right"></td></tr>
+      <tr><td>Business Starter</td><td><span class="tag warn">30 GB</span></td><td>100</td><td style="text-align:right;font-family:'DM Mono',monospace;color:var(--text2)">R$ 40,90</td><td><input id="lBizS" type="number" min="0" value="" oninput="calc()" style="text-align:right"></td></tr>
+      <tr><td>Business Standard</td><td><span class="tag ok">2 TB</span></td><td>150</td><td style="text-align:right;font-family:'DM Mono',monospace;color:var(--text2)">R$ 81,80</td><td><input id="lBizSt" type="number" min="0" value="" oninput="calc()" style="text-align:right"></td></tr>
+      <tr><td>Business Plus</td><td><span class="tag ok">5 TB</span></td><td>500</td><td style="text-align:right;font-family:'DM Mono',monospace;color:var(--text2)">R$ 128,40</td><td><input id="lBizP" type="number" min="0" value="" oninput="calc()" style="text-align:right"></td></tr>
     </tbody>
   </table>
-
-  <div class="sec-label">Licenças Enterprise</div>
+  <div class="sec-label">Enterprise</div>
   <table class="tbl">
-    <thead>
-      <tr>
-        <th>Plano</th>
-        <th>Armazenamento</th>
-        <th>Gemini</th>
-        <th style="text-align:right">BRL/usuário</th>
-        <th style="text-align:right;width:110px">Qtd. usuários</th>
-      </tr>
-    </thead>
+    <thead><tr><th>Plano</th><th>Armazenamento</th><th>Meet</th><th style="text-align:right">BRL/usuário</th><th style="text-align:right;width:100px">Qtd.</th></tr></thead>
     <tbody>
-      <tr><td>Enterprise Essentials</td><td><span class="tag ok">1 TB</span></td><td>—</td><td style="text-align:right;font-family:'DM Mono',monospace;color:var(--text2)">R$ 58,00</td><td><input id="lEntE" type="number" min="0" value="" oninput="calc()" style="text-align:right"></td></tr>
-      <tr><td>Enterprise Essentials Plus</td><td><span class="tag ok">5 TB</span></td><td>—</td><td style="text-align:right;font-family:'DM Mono',monospace;color:var(--text2)">R$ 116,00</td><td><input id="lEntEP" type="number" min="0" value="" oninput="calc()" style="text-align:right"></td></tr>
-      <tr><td>Enterprise Starter</td><td><span class="tag ok">1 TB</span></td><td><span class="tag purple">Gemini Ent.</span></td><td style="text-align:right;font-family:'DM Mono',monospace;color:var(--text2)">R$ 63,90</td><td><input id="lEntS" type="number" min="0" value="" oninput="calc()" style="text-align:right"></td></tr>
-      <tr><td>Enterprise Standard</td><td><span class="tag ok">5 TB</span></td><td><span class="tag purple">Gemini Ent.</span></td><td style="text-align:right;font-family:'DM Mono',monospace;color:var(--text2)">R$ 156,20</td><td><input id="lEntSt" type="number" min="0" value="" oninput="calc()" style="text-align:right"></td></tr>
-      <tr><td>Enterprise Plus</td><td><span class="tag ok">Ilimitado</span></td><td><span class="tag purple">Gemini Ent.</span></td><td style="text-align:right;font-family:'DM Mono',monospace;color:var(--text2)">R$ 203,00</td><td><input id="lEntP" type="number" min="0" value="" oninput="calc()" style="text-align:right"></td></tr>
+      
+      
+      <tr><td>Enterprise Starter</td><td><span class="tag ok">1 TB</span></td><td>250</td><td style="text-align:right;font-family:'DM Mono',monospace;color:var(--text2)">R$ 63,90</td><td><input id="lEntS" type="number" min="0" value="" oninput="calc()" style="text-align:right"></td></tr>
+      <tr><td>Enterprise Standard</td><td><span class="tag ok">Ilimitado</span></td><td>500</td><td style="text-align:right;font-family:'DM Mono',monospace;color:var(--text2)">R$ 156,20</td><td><input id="lEntSt" type="number" min="0" value="" oninput="calc()" style="text-align:right"></td></tr>
+      <tr><td>Enterprise Plus</td><td><span class="tag ok">Ilimitado</span></td><td>500+</td><td style="text-align:right;font-family:'DM Mono',monospace;color:var(--text2)">R$ 203,00</td><td><input id="lEntP" type="number" min="0" value="" oninput="calc()" style="text-align:right"></td></tr>
     </tbody>
   </table>
-
-  <div class="sec-label">Frontline & outros</div>
+  <div class="sec-label">Frontline & Add-ons</div>
   <table class="tbl">
-    <thead>
-      <tr>
-        <th>Plano</th>
-        <th>Tipo</th>
-        <th></th>
-        <th style="text-align:right">BRL/usuário</th>
-        <th style="text-align:right;width:110px">Qtd. usuários</th>
-      </tr>
-    </thead>
+    <thead><tr><th>Plano</th><th>Tipo</th><th></th><th style="text-align:right">BRL/usuário</th><th style="text-align:right;width:100px">Qtd.</th></tr></thead>
     <tbody>
       <tr><td>Frontline Starter</td><td><span class="tag warn">Frontline</span></td><td></td><td style="text-align:right;font-family:'DM Mono',monospace;color:var(--text2)">R$ 30,00</td><td><input id="lFrS" type="number" min="0" value="" oninput="calc()" style="text-align:right"></td></tr>
       <tr><td>Frontline Standard</td><td><span class="tag warn">Frontline</span></td><td></td><td style="text-align:right;font-family:'DM Mono',monospace;color:var(--text2)">R$ 70,00</td><td><input id="lFrSt" type="number" min="0" value="" oninput="calc()" style="text-align:right"></td></tr>
       <tr><td>Frontline Plus</td><td><span class="tag warn">Frontline</span></td><td></td><td style="text-align:right;font-family:'DM Mono',monospace;color:var(--text2)">R$ 93,00</td><td><input id="lFrP" type="number" min="0" value="" oninput="calc()" style="text-align:right"></td></tr>
       <tr><td>Gemini Business</td><td><span class="tag info">Add-on</span></td><td></td><td style="text-align:right;font-family:'DM Mono',monospace;color:var(--text2)">R$ 132,36</td><td><input id="lGemB" type="number" min="0" value="" oninput="calc()" style="text-align:right"></td></tr>
       <tr><td>Gemini Enterprise Standard</td><td><span class="tag purple">Add-on</span></td><td></td><td style="text-align:right;font-family:'DM Mono',monospace;color:var(--text2)">R$ 185,31</td><td><input id="lGemE" type="number" min="0" value="" oninput="calc()" style="text-align:right"></td></tr>
+      <tr><td>Gemini Enterprise Plus</td><td><span class="tag purple">Add-on</span></td><td></td><td style="text-align:right;font-family:'DM Mono',monospace;color:var(--text2)">R$ 317,67</td><td><input id="lGemEP" type="number" min="0" value="" oninput="calc()" style="text-align:right"></td></tr>
+      <tr><td>Gemini Enterprise Frontline</td><td><span class="tag purple">Add-on</span></td><td></td><td style="text-align:right;font-family:'DM Mono',monospace;color:var(--text2)">R$ 79,42</td><td><input id="lGemEF" type="number" min="0" value="" oninput="calc()" style="text-align:right"></td></tr>
       <tr><td>Cloud Identity Premium</td><td><span class="tag info">Segurança</span></td><td></td><td style="text-align:right;font-family:'DM Mono',monospace;color:var(--text2)">R$ 35,00</td><td><input id="lCIP" type="number" min="0" value="" oninput="calc()" style="text-align:right"></td></tr>
       <tr><td>Google Vault</td><td><span class="tag info">Compliance</span></td><td></td><td style="text-align:right;font-family:'DM Mono',monospace;color:var(--text2)">R$ 30,00</td><td><input id="lVault" type="number" min="0" value="" oninput="calc()" style="text-align:right"></td></tr>
       <tr><td>AppSheet Core</td><td><span class="tag info">AppSheet</span></td><td></td><td style="text-align:right;font-family:'DM Mono',monospace;color:var(--text2)">R$ 58,00</td><td><input id="lAppC" type="number" min="0" value="" oninput="calc()" style="text-align:right"></td></tr>
     </tbody>
   </table>
-
   <div class="sec-label">Periodicidade e margem</div>
   <div class="fg">
-    <div class="field"><label>Periodicidade</label>
-      <select id="periodo" onchange="calc()">
-        <option value="mensal">Mensal</option>
-        <option value="anual">Anual</option>
-      </select>
-    </div>
+    <div class="field"><label>Periodicidade</label><select id="periodo" onchange="calc()"><option value="mensal">Mensal</option><option value="anual">Anual</option></select></div>
     <div class="field"><label>Margem sobre licenças (%)</label><input id="margemLic" type="number" min="0" max="100" value="" oninput="calc()"><span class="hint">Aplicada antes de mostrar ao cliente</span></div>
   </div>
-
   <div id="licAlerta" class="alert warn" style="display:none;"></div>
-
   <div class="panel blue">
     <div class="panel-title">💰 Custo de licenças</div>
     <div class="prow"><span class="k">Subtotal Google (BRL/mês)</span><span class="v" id="licSubBrl">—</span></div>
@@ -502,850 +342,492 @@ hr{border:none;border-top:1px solid var(--border);margin:1.25rem 0;}
     <div class="prow"><span class="k">Microsoft atual (BRL/mês)</span><span class="v" id="licMsBrl">—</span></div>
     <div class="prow"><span class="k">Diferença mensal</span><span class="v" id="licDiff">—</span></div>
   </div>
-
-  <div class="nav-row">
-    <button class="btn" onclick="goTo(2)">← Migração</button>
-    <button class="btn primary" onclick="goTo(4)">Treinamento →</button>
-  </div>
+  <div class="nav-row"><button class="btn" onclick="goTo(2)">← Migração</button><button class="btn primary" onclick="goTo(4)">Treinamento →</button></div>
 </div>
 </div>
 
-<!-- PAGE 5: TREINAMENTO -->
 <div class="page" id="page4">
 <div class="card">
-  <div class="card-title"><div class="card-icon">🎓</div> Treinamento — Planos Google Workspace</div>
-
+  <div class="card-title"><div class="card-icon">🎓</div> Treinamento</div>
   <div class="alert info" id="trainFaixaInfo"></div>
-
-  <div class="sec-label">Selecione o plano de treinamento de usuários</div>
-
-  <!-- FAIXA 1: até 20 -->
+  <div class="sec-label">Selecione o plano de treinamento</div>
   <div class="train-faixa" id="faixa1">
     <div style="font-size:12px;font-weight:700;color:var(--text2);margin:1rem 0 .5rem;text-transform:uppercase;letter-spacing:.5px;">Até 20 usuários</div>
     <div style="display:grid;grid-template-columns:1fr 1fr;gap:.75rem;">
-      <div class="train-card" id="tc_f1_std" onclick="selectTrain('f1_std',420)">
-        <div class="tc-check" id="ck_f1_std"></div>
-        <div class="tc-badge">Standard</div>
-        <div class="tc-price">USD 420</div>
-        <div class="tc-details">3 sessões de 1–2h (máx 20 pessoas)<br>1 comunicado gráfico<br>Material POP incluído<br>Acesso entrenate.servinformacion.com<br>Gravações das sessões</div>
-      </div>
-      <div class="train-card" id="tc_f1_prm" onclick="selectTrain('f1_prm',660)">
-        <div class="tc-check" id="ck_f1_prm"></div>
-        <div class="tc-badge" style="color:var(--purple-text)">Premium</div>
-        <div class="tc-price">USD 660</div>
-        <div class="tc-details">5 sessões de 1–2h (máx 20 pessoas)<br>1 comunicado gráfico<br>Material POP incluído<br>Acesso entrenate.servinformacion.com<br>Gravações das sessões</div>
-      </div>
+      <div class="train-card" id="tc_f1_std" onclick="selectTrain('f1_std')"><div class="tc-check" id="ck_f1_std"></div><div class="tc-badge">Standard</div><div class="tc-price">USD 420</div><div class="tc-details">3 sessões de 1–2h (máx 20 pessoas)<br>1 comunicado gráfico · Material POP<br>Acesso entrenate.servinformacion.com<br>Gravações das sessões</div></div>
+      <div class="train-card" id="tc_f1_prm" onclick="selectTrain('f1_prm')"><div class="tc-check" id="ck_f1_prm"></div><div class="tc-badge" style="color:var(--purple-text)">Premium</div><div class="tc-price">USD 660</div><div class="tc-details">5 sessões de 1–2h (máx 20 pessoas)<br>1 comunicado gráfico · Material POP<br>Acesso entrenate.servinformacion.com<br>Gravações das sessões</div></div>
     </div>
   </div>
-
-  <!-- FAIXA 2: 21-50 -->
   <div class="train-faixa" id="faixa2">
     <div style="font-size:12px;font-weight:700;color:var(--text2);margin:1.25rem 0 .5rem;text-transform:uppercase;letter-spacing:.5px;">De 21 a 50 usuários</div>
     <div style="display:grid;grid-template-columns:1fr 1fr;gap:.75rem;">
-      <div class="train-card" id="tc_f2_std" onclick="selectTrain('f2_std',900)">
-        <div class="tc-check" id="ck_f2_std"></div>
-        <div class="tc-badge">Standard</div>
-        <div class="tc-price">USD 900</div>
-        <div class="tc-details">7 sessões de 1–2h (máx 50 pessoas)<br>1 comunicado gráfico<br>Material POP incluído<br>Acesso entrenate.servinformacion.com<br>Gravações das sessões</div>
-      </div>
-      <div class="train-card" id="tc_f2_prm" onclick="selectTrain('f2_prm',1200)">
-        <div class="tc-check" id="ck_f2_prm"></div>
-        <div class="tc-badge" style="color:var(--purple-text)">Premium</div>
-        <div class="tc-price">USD 1.200</div>
-        <div class="tc-details">9 sessões de 1–2h (máx 50 pessoas)<br>2 comunicados gráficos<br>Material POP incluído<br>Acesso entrenate.servinformacion.com<br>Gravações das sessões</div>
-      </div>
+      <div class="train-card" id="tc_f2_std" onclick="selectTrain('f2_std')"><div class="tc-check" id="ck_f2_std"></div><div class="tc-badge">Standard</div><div class="tc-price">USD 900</div><div class="tc-details">7 sessões de 1–2h (máx 50 pessoas)<br>1 comunicado gráfico · Material POP<br>Acesso entrenate.servinformacion.com<br>Gravações das sessões</div></div>
+      <div class="train-card" id="tc_f2_prm" onclick="selectTrain('f2_prm')"><div class="tc-check" id="ck_f2_prm"></div><div class="tc-badge" style="color:var(--purple-text)">Premium</div><div class="tc-price">USD 1.200</div><div class="tc-details">9 sessões de 1–2h (máx 50 pessoas)<br>2 comunicados gráficos · Material POP<br>Acesso entrenate.servinformacion.com<br>Gravações das sessões</div></div>
     </div>
   </div>
-
-  <!-- FAIXA 3: 51-70 -->
   <div class="train-faixa" id="faixa3">
     <div style="font-size:12px;font-weight:700;color:var(--text2);margin:1.25rem 0 .5rem;text-transform:uppercase;letter-spacing:.5px;">De 51 a 70 usuários</div>
     <div style="display:grid;grid-template-columns:1fr 1fr;gap:.75rem;">
-      <div class="train-card" id="tc_f3_std" onclick="selectTrain('f3_std',1020)">
-        <div class="tc-check" id="ck_f3_std"></div>
-        <div class="tc-badge">Standard</div>
-        <div class="tc-price">USD 1.020 <span style="font-size:11px;font-weight:400">+ envío</span></div>
-        <div class="tc-details">7 sessões de 1–2h (máx 50 pessoas)<br>2 peças gráficas<br>Material POP: até 30 canetas + 5 miniblocos<br>Acesso entrenate.servinformacion.com<br>Gravações das sessões</div>
-      </div>
-      <div class="train-card" id="tc_f3_prm" onclick="selectTrain('f3_prm',1320)">
-        <div class="tc-check" id="ck_f3_prm"></div>
-        <div class="tc-badge" style="color:var(--purple-text)">Premium</div>
-        <div class="tc-price">USD 1.320 <span style="font-size:11px;font-weight:400">+ envío</span></div>
-        <div class="tc-details">9 sessões de 1–2h + 1 sessão Gemini<br>3 peças gráficas<br>Material POP: até 50 canetas + 3 garrafas + 3 bonés<br>Acesso entrenate.servinformacion.com<br>Gravações das sessões</div>
-      </div>
+      <div class="train-card" id="tc_f3_std" onclick="selectTrain('f3_std')"><div class="tc-check" id="ck_f3_std"></div><div class="tc-badge">Standard</div><div class="tc-price">USD 1.020 <span style="font-size:11px;font-weight:400">+ envío</span></div><div class="tc-details">7 sessões · 2 peças gráficas<br>Material POP: 30 canetas + 5 miniblocos<br>Acesso entrenate · Gravações</div></div>
+      <div class="train-card" id="tc_f3_prm" onclick="selectTrain('f3_prm')"><div class="tc-check" id="ck_f3_prm"></div><div class="tc-badge" style="color:var(--purple-text)">Premium</div><div class="tc-price">USD 1.320 <span style="font-size:11px;font-weight:400">+ envío</span></div><div class="tc-details">9 sessões + 1 Gemini · 3 peças gráficas<br>Material POP: 50 canetas + 3 garrafas + 3 bonés<br>Acesso entrenate · Gravações</div></div>
     </div>
   </div>
-
-  <!-- FAIXA 4: 71-100 -->
   <div class="train-faixa" id="faixa4">
     <div style="font-size:12px;font-weight:700;color:var(--text2);margin:1.25rem 0 .5rem;text-transform:uppercase;letter-spacing:.5px;">De 71 a 100 usuários</div>
     <div style="display:grid;grid-template-columns:1fr 1fr;gap:.75rem;">
-      <div class="train-card" id="tc_f4_std" onclick="selectTrain('f4_std',1200)">
-        <div class="tc-check" id="ck_f4_std"></div>
-        <div class="tc-badge">Standard</div>
-        <div class="tc-price">USD 1.200 <span style="font-size:11px;font-weight:400">+ envío</span></div>
-        <div class="tc-details">8 sessões de 1–2h + 1 sessão Gemini<br>3 peças gráficas<br>Material POP: até 40 canetas + 5 miniblocos<br>Acesso entrenate.servinformacion.com<br>Gravações das sessões</div>
-      </div>
-      <div class="train-card" id="tc_f4_prm" onclick="selectTrain('f4_prm',1560)">
-        <div class="tc-check" id="ck_f4_prm"></div>
-        <div class="tc-badge" style="color:var(--purple-text)">Premium</div>
-        <div class="tc-price">USD 1.560 <span style="font-size:11px;font-weight:400">+ envío</span></div>
-        <div class="tc-details">10 sessões de 1–2h + 1 sessão Gemini<br>5 peças gráficas<br>Material POP: até 60 canetas + 5 miniblocos + 4 bonés<br>Acesso entrenate.servinformacion.com<br>Gravações das sessões</div>
-      </div>
+      <div class="train-card" id="tc_f4_std" onclick="selectTrain('f4_std')"><div class="tc-check" id="ck_f4_std"></div><div class="tc-badge">Standard</div><div class="tc-price">USD 1.200 <span style="font-size:11px;font-weight:400">+ envío</span></div><div class="tc-details">8 sessões + 1 Gemini · 3 peças gráficas<br>Material POP: 40 canetas + 5 miniblocos<br>Acesso entrenate · Gravações</div></div>
+      <div class="train-card" id="tc_f4_prm" onclick="selectTrain('f4_prm')"><div class="tc-check" id="ck_f4_prm"></div><div class="tc-badge" style="color:var(--purple-text)">Premium</div><div class="tc-price">USD 1.560 <span style="font-size:11px;font-weight:400">+ envío</span></div><div class="tc-details">10 sessões + 1 Gemini · 5 peças gráficas<br>Material POP: 60 canetas + 5 miniblocos + 4 bonés<br>Acesso entrenate · Gravações</div></div>
     </div>
   </div>
-
-  <!-- FAIXA 5: 101-300 -->
   <div class="train-faixa" id="faixa5">
     <div style="font-size:12px;font-weight:700;color:var(--text2);margin:1.25rem 0 .5rem;text-transform:uppercase;letter-spacing:.5px;">De 101 a 300 usuários</div>
     <div style="display:grid;grid-template-columns:1fr 1fr;gap:.75rem;">
-      <div class="train-card" id="tc_f5_std" onclick="selectTrain('f5_std',2400)">
-        <div class="tc-check" id="ck_f5_std"></div>
-        <div class="tc-badge">Standard</div>
-        <div class="tc-price">USD 2.400 <span style="font-size:11px;font-weight:400">+ envío</span></div>
-        <div class="tc-details">11 sessões de 1–2h + 1 sessão Gemini<br>7 peças gráficas (campanha expectativa)<br>Material POP: até 90 canetas + 5 miniblocos<br>Acesso entrenate.servinformacion.com<br>Gravações das sessões</div>
-      </div>
-      <div class="train-card" id="tc_f5_prm" onclick="selectTrain('f5_prm',3360)">
-        <div class="tc-check" id="ck_f5_prm"></div>
-        <div class="tc-badge" style="color:var(--purple-text)">Premium</div>
-        <div class="tc-price">USD 3.360 <span style="font-size:11px;font-weight:400">+ envío</span></div>
-        <div class="tc-details">21 sessões de 1–2h + 2 sessões Gemini<br>9 peças gráficas<br>Material POP: até 120 canetas + 5 miniblocos + 5 camisetas + 5 bonés<br>Acesso entrenate.servinformacion.com<br>Gravações das sessões</div>
-      </div>
+      <div class="train-card" id="tc_f5_std" onclick="selectTrain('f5_std')"><div class="tc-check" id="ck_f5_std"></div><div class="tc-badge">Standard</div><div class="tc-price">USD 2.400 <span style="font-size:11px;font-weight:400">+ envío</span></div><div class="tc-details">11 sessões + 1 Gemini · 7 peças gráficas<br>Material POP: 90 canetas + 5 miniblocos<br>Acesso entrenate · Gravações</div></div>
+      <div class="train-card" id="tc_f5_prm" onclick="selectTrain('f5_prm')"><div class="tc-check" id="ck_f5_prm"></div><div class="tc-badge" style="color:var(--purple-text)">Premium</div><div class="tc-price">USD 3.360 <span style="font-size:11px;font-weight:400">+ envío</span></div><div class="tc-details">21 sessões + 2 Gemini · 9 peças gráficas<br>Material POP: 120 canetas + 5 miniblocos + 5 camisetas + 5 bonés<br>Acesso entrenate · Gravações</div></div>
     </div>
   </div>
-
-  <!-- FAIXA 6: 301-500 -->
   <div class="train-faixa" id="faixa6">
     <div style="font-size:12px;font-weight:700;color:var(--text2);margin:1.25rem 0 .5rem;text-transform:uppercase;letter-spacing:.5px;">De 301 a 500 usuários</div>
     <div style="display:grid;grid-template-columns:1fr 1fr;gap:.75rem;">
-      <div class="train-card" id="tc_f6_std" onclick="selectTrain('f6_std',3720)">
-        <div class="tc-check" id="ck_f6_std"></div>
-        <div class="tc-badge">Standard</div>
-        <div class="tc-price">USD 3.720 <span style="font-size:11px;font-weight:400">+ envío</span></div>
-        <div class="tc-details">21 sessões de 1–2h + 1 sessão Gemini<br>11 peças gráficas<br>Material POP: até 150 canetas + 7 miniblocos<br>Acesso entrenate.servinformacion.com<br>Gravações das sessões</div>
-      </div>
-      <div class="train-card" id="tc_f6_prm" onclick="selectTrain('f6_prm',4860)">
-        <div class="tc-check" id="ck_f6_prm"></div>
-        <div class="tc-badge" style="color:var(--purple-text)">Premium</div>
-        <div class="tc-price">USD 4.860 <span style="font-size:11px;font-weight:400">+ envío</span></div>
-        <div class="tc-details">31 sessões de 1–2h + 2 sessões Gemini<br>16 peças gráficas<br>Material POP: até 250 canetas + 10 vasos + 10 camisetas + 5 kit ferramentas<br>Acesso entrenate.servinformacion.com<br>Gravações das sessões</div>
-      </div>
+      <div class="train-card" id="tc_f6_std" onclick="selectTrain('f6_std')"><div class="tc-check" id="ck_f6_std"></div><div class="tc-badge">Standard</div><div class="tc-price">USD 3.720 <span style="font-size:11px;font-weight:400">+ envío</span></div><div class="tc-details">21 sessões + 1 Gemini · 11 peças gráficas<br>Material POP: 150 canetas + 7 miniblocos<br>Acesso entrenate · Gravações</div></div>
+      <div class="train-card" id="tc_f6_prm" onclick="selectTrain('f6_prm')"><div class="tc-check" id="ck_f6_prm"></div><div class="tc-badge" style="color:var(--purple-text)">Premium</div><div class="tc-price">USD 4.860 <span style="font-size:11px;font-weight:400">+ envío</span></div><div class="tc-details">31 sessões + 2 Gemini · 16 peças gráficas<br>Material POP: 250 canetas + 10 vasos + 10 camisetas + 5 kit ferramentas<br>Acesso entrenate · Gravações</div></div>
     </div>
   </div>
-
-  <!-- FAIXA 7: 501-1000 -->
   <div class="train-faixa" id="faixa7">
     <div style="font-size:12px;font-weight:700;color:var(--text2);margin:1.25rem 0 .5rem;text-transform:uppercase;letter-spacing:.5px;">De 501 a 1.000 usuários</div>
     <div style="display:grid;grid-template-columns:1fr 1fr;gap:.75rem;">
-      <div class="train-card" id="tc_f7_std" onclick="selectTrain('f7_std',6120)">
-        <div class="tc-check" id="ck_f7_std"></div>
-        <div class="tc-badge">Standard</div>
-        <div class="tc-price">USD 6.120 <span style="font-size:11px;font-weight:400">+ envío</span></div>
-        <div class="tc-details">36 sessões de 1–2h + 1 sessão Gemini<br>14 peças gráficas<br>Material POP: até 300 canetas + 10 vasos + 5 camisetas<br>Acesso entrenate.servinformacion.com<br>Gravações das sessões</div>
-      </div>
-      <div class="train-card" id="tc_f7_prm" onclick="selectTrain('f7_prm',7020)">
-        <div class="tc-check" id="ck_f7_prm"></div>
-        <div class="tc-badge" style="color:var(--purple-text)">Premium</div>
-        <div class="tc-price">USD 7.020 <span style="font-size:11px;font-weight:400">+ envío</span></div>
-        <div class="tc-details">43 sessões de 1–2h + 2–3 sessões Gemini<br>18 peças gráficas<br>Material POP: até 470 canetas + 5 organizadores + 5 vasos + 5 garrafas + 10 camisetas<br>Acesso entrenate.servinformacion.com<br>Gravações das sessões</div>
-      </div>
+      <div class="train-card" id="tc_f7_std" onclick="selectTrain('f7_std')"><div class="tc-check" id="ck_f7_std"></div><div class="tc-badge">Standard</div><div class="tc-price">USD 6.120 <span style="font-size:11px;font-weight:400">+ envío</span></div><div class="tc-details">36 sessões + 1 Gemini · 14 peças gráficas<br>Material POP: 300 canetas + 10 vasos + 5 camisetas<br>Acesso entrenate · Gravações</div></div>
+      <div class="train-card" id="tc_f7_prm" onclick="selectTrain('f7_prm')"><div class="tc-check" id="ck_f7_prm"></div><div class="tc-badge" style="color:var(--purple-text)">Premium</div><div class="tc-price">USD 7.020 <span style="font-size:11px;font-weight:400">+ envío</span></div><div class="tc-details">43 sessões + 2–3 Gemini · 18 peças gráficas<br>Material POP: 470 canetas + 5 organizadores + 5 vasos + 5 garrafas + 10 camisetas<br>Acesso entrenate · Gravações</div></div>
     </div>
   </div>
-
   <div id="trainSelecionado" class="alert success" style="display:none;margin-top:1rem;"></div>
   <div id="trainNenhum" class="alert warn" style="display:none;margin-top:1rem;">Nenhum plano selecionado. Clique em um plano acima para incluir na proposta.</div>
-
   <div class="sec-label" style="margin-top:1.5rem;">Treinamento técnico (administradores)</div>
   <div class="fg">
     <div class="field"><label>Incluir treinamento técnico?</label>
-      <select id="trainTecnico" onchange="calc()">
-        <option value="">Não incluir</option>
-        <option value="1">Sim — 4h × R$ 250/hora = R$ 1.000</option>
-      </select>
+      <select id="trainTecnico" onchange="calc()"><option value="">Não incluir</option><option value="1">Sim — 4h × R$ 250 = R$ 1.000</option></select>
     </div>
     <div class="field"><label>Número de administradores</label><input id="trainAdmins" type="number" min="1" value="" oninput="calc()"><span class="hint">Para referência na proposta</span></div>
   </div>
-
   <div class="panel purple">
-    <div class="panel-title">🎓 Total treinamento selecionado</div>
+    <div class="panel-title">🎓 Total treinamento</div>
     <div class="prow"><span class="k">Plano selecionado</span><span class="v" id="trainPlanoNome">—</span></div>
     <div class="prow"><span class="k">Treinamento usuários (USD)</span><span class="v" id="trainUserCusto">—</span></div>
     <div class="prow"><span class="k">Treinamento usuários (BRL)</span><span class="v" id="trainUserBrl">—</span></div>
     <div class="prow"><span class="k">Treinamento técnico (admins)</span><span class="v" id="trainTecCusto">—</span></div>
-    <div class="prow"><span class="k">Total treinamento (USD)</span><span class="v" id="trainTotalUsd">—</span></div>
     <div class="prow"><span class="k">Total treinamento (BRL)</span><span class="v" id="trainTotalBrl">—</span></div>
   </div>
-
-  <div class="nav-row">
-    <button class="btn" onclick="goTo(3)">← Licenças</button>
-    <button class="btn primary" onclick="goTo(5)">Consultoria →</button>
-  </div>
+  <div class="nav-row"><button class="btn" onclick="goTo(3)">← Licenças</button><button class="btn primary" onclick="goTo(5)">Consultoria →</button></div>
 </div>
 </div>
 
-<!-- PAGE 6: CONSULTORIA -->
 <div class="page" id="page5">
 <div class="card">
   <div class="card-title"><div class="card-icon">💼</div> Consultoria & serviços adicionais</div>
-
-  <div class="sec-label">Consultoria de organização de dados / metadados</div>
+  <div class="sec-label">Consultoria de organização de dados</div>
   <div class="fg">
-    <div class="field"><label>Incluir consultoria?</label>
-      <select id="consultoria" onchange="calc()">
-        <option value="">Não incluir</option>
-        <option value="1">Sim</option>
-      </select>
-    </div>
+    <div class="field"><label>Incluir consultoria?</label><select id="consultoria" onchange="calc()"><option value="">Não incluir</option><option value="1">Sim</option></select></div>
     <div class="field"><label>Horas de consultoria</label><input id="consultHoras" type="number" min="1" value="" oninput="calc()"><span class="hint">R$ 250/hora</span></div>
   </div>
-
   <div class="sec-label">Implementação</div>
   <div class="fg">
-    <div class="field"><label>Incluir implementação?</label>
-      <select id="implementacao" onchange="calc()">
-        <option value="">Não incluir</option>
-        <option value="1">Sim</option>
-      </select>
-    </div>
+    <div class="field"><label>Incluir implementação?</label><select id="implementacao" onchange="calc()"><option value="">Não incluir</option><option value="1">Sim</option></select></div>
     <div class="field"><label>Horas de implementação</label><input id="implHoras" type="number" min="1" value="" oninput="calc()"><span class="hint">R$ 250/hora</span></div>
   </div>
-
   <div class="sec-label">Suporte pós-migração</div>
   <div class="fg">
-    <div class="field"><label>Incluir suporte pós-migração?</label>
-      <select id="suporte" onchange="calc()">
-        <option value="">Não incluir</option>
-        <option value="mensal">Sim — mensal</option>
-        <option value="avulso">Sim — avulso (horas)</option>
-      </select>
-    </div>
+    <div class="field"><label>Incluir suporte?</label><select id="suporte" onchange="calc()"><option value="">Não incluir</option><option value="mensal">Sim — mensal</option><option value="avulso">Sim — avulso</option></select></div>
     <div class="field"><label>Horas de suporte</label><input id="suporteHoras" type="number" min="1" value="" oninput="calc()"><span class="hint">R$ 250/hora</span></div>
   </div>
-
-  <div class="sec-label">Observações para a proposta</div>
+  <div class="sec-label">Observações</div>
   <div class="fg" style="grid-template-columns:1fr;">
-    <div class="field"><label>Observações / escopo adicional</label><textarea id="obsGeral" placeholder="Ex: Permissões de pastas devem ser reconfiguradas manualmente pelos administradores após a migração..."></textarea></div>
+    <div class="field"><label>Observações / escopo adicional</label><textarea id="obsGeral" placeholder="Ex: Permissões de pastas devem ser reconfiguradas manualmente após a migração..."></textarea></div>
   </div>
-
   <div class="panel green">
     <div class="panel-title">💼 Total serviços adicionais</div>
     <div class="prow"><span class="k">Consultoria</span><span class="v" id="consultCusto">—</span></div>
     <div class="prow"><span class="k">Implementação</span><span class="v" id="implCusto">—</span></div>
     <div class="prow"><span class="k">Suporte pós-migração</span><span class="v" id="suporteCusto">—</span></div>
-    <div class="prow"><span class="k">Total serviços adicionais (BRL)</span><span class="v" id="servicosTotalBrl">—</span></div>
+    <div class="prow"><span class="k">Total serviços (BRL)</span><span class="v" id="servicosTotalBrl">—</span></div>
   </div>
-
-  <div class="nav-row">
-    <button class="btn" onclick="goTo(4)">← Treinamento</button>
-    <button class="btn primary" onclick="goTo(6)">Ver resumo →</button>
-  </div>
+  <div class="nav-row"><button class="btn" onclick="goTo(4)">← Treinamento</button><button class="btn primary" onclick="goTo(6)">Ver resumo →</button></div>
 </div>
 </div>
 
-<!-- PAGE 7: RESUMO -->
 <div class="page" id="page6">
 <div class="card">
   <div class="card-title"><div class="card-icon">📊</div> Resumo executivo & proposta</div>
-
   <div class="ri-bar" id="riBar"></div>
   <div class="mg" id="metricsGrid"></div>
-
-  <hr>
-  <div class="sec-label">Ambientes mapeados</div>
-  <div class="bd" id="bdAmbientes"></div>
-
-  <hr>
-  <div class="sec-label">Migração — custo único</div>
-  <div class="bd" id="bdMigracao"></div>
-
-  <hr>
-  <div class="sec-label">Licenças Google Workspace — <span id="bdLicPeriodo">mensal</span></div>
-  <div class="bd" id="bdLicencas"></div>
-
-  <hr>
-  <div class="sec-label">Treinamento</div>
-  <div class="bd" id="bdTreinamento"></div>
-
-  <hr>
-  <div class="sec-label">Consultoria & serviços adicionais</div>
-  <div class="bd" id="bdConsultoria"></div>
-
-  <hr>
-  <div class="sec-label">Comparativo Microsoft x Google (1º ano)</div>
-  <div class="bd" id="bdComparativo"></div>
-
-  <hr>
-  <div class="sec-label">Resumo total da proposta</div>
-  <div class="bd" id="bdTotal"></div>
-
+  <hr><div class="sec-label">Ambientes mapeados</div><div class="bd" id="bdAmbientes"></div>
+  <hr><div class="sec-label">Migração — custo único</div><div class="bd" id="bdMigracao"></div>
+  <hr><div class="sec-label">Licenças Google Workspace — <span id="bdLicPeriodo">mensal</span></div><div class="bd" id="bdLicencas"></div>
+  <hr><div class="sec-label">Treinamento</div><div class="bd" id="bdTreinamento"></div>
+  <hr><div class="sec-label">Consultoria & serviços adicionais</div><div class="bd" id="bdConsultoria"></div>
+  <hr><div class="sec-label">Comparativo Microsoft x Google (1º ano)</div><div class="bd" id="bdComparativo"></div>
+  <hr><div class="sec-label">Resumo total</div><div class="bd" id="bdTotal"></div>
   <div class="nav-row">
     <button class="btn" onclick="goTo(5)">← Consultoria</button>
     <div class="btn-group">
       <button class="btn" onclick="window.print()">🖨️ Imprimir / PDF</button>
-      <button class="btn purple" onclick="openModal()">📄 Gerar proposta Google Docs</button>
+      <button class="btn purple" onclick="gerarProposta()">📄 Gerar proposta completa</button>
     </div>
   </div>
 </div>
 </div>
-
-</div><!-- end .app -->
-
-<!-- MODAL PROPOSTA -->
-<div class="modal-bg" id="modalBg">
-  <div class="modal">
-    <h2>Gerar proposta no Google Docs</h2>
-    <p>A proposta será criada como um documento Google Docs na sua conta Google com todos os dados calculados. Clique em "Abrir Google Docs" e cole o conteúdo gerado abaixo.</p>
-    <div class="alert info" style="margin-bottom:1rem;" id="modalInfo"></div>
-    <textarea id="propostaTexto" style="width:100%;height:220px;font-size:12px;font-family:'DM Mono',monospace;border:1px solid var(--border);border-radius:var(--r);padding:10px;background:var(--surface2);color:var(--text);resize:vertical;" readonly></textarea>
-    <div class="btn-group" style="margin-top:1rem;justify-content:flex-end;">
-      <button class="btn" onclick="closeModal()">Fechar</button>
-      <button class="btn primary" onclick="copyProposta()">📋 Copiar texto</button>
-      <button class="btn green" onclick="openGDocs()">Abrir Google Docs ↗</button>
-    </div>
-  </div>
 </div>
 
 <script>
-// ─── DATA ───────────────────────────────────────────────────
-const ENV_TIPOS = ['E-mail (Outlook/Exchange)','Arquivos (SharePoint)','Arquivos (OneDrive)','Calendário','Contatos','Chat (Teams)','Outro'];
-
-const LIC_DATA = [
-  {id:'lBizS',  nome:'Business Starter',          preco:40.90},
-  {id:'lBizSt', nome:'Business Standard',         preco:81.80},
-  {id:'lBizP',  nome:'Business Plus',             preco:128.40},
-  {id:'lEntE',  nome:'Enterprise Essentials',     preco:58.00},
-  {id:'lEntEP', nome:'Enterprise Essentials Plus',preco:116.00},
-  {id:'lEntS',  nome:'Enterprise Starter',        preco:63.90},
-  {id:'lEntSt', nome:'Enterprise Standard',       preco:156.20},
-  {id:'lEntP',  nome:'Enterprise Plus',           preco:203.00},
-  {id:'lFrS',   nome:'Frontline Starter',         preco:30.00},
-  {id:'lFrSt',  nome:'Frontline Standard',        preco:70.00},
-  {id:'lFrP',   nome:'Frontline Plus',            preco:93.00},
-  {id:'lGemB',  nome:'Gemini Business (add-on)',  preco:132.36},
-  {id:'lGemE',  nome:'Gemini Enterprise Standard (add-on)',preco:185.31},
-  {id:'lCIP',   nome:'Cloud Identity Premium',    preco:35.00},
-  {id:'lVault', nome:'Google Vault',              preco:30.00},
-  {id:'lAppC',  nome:'AppSheet Core',             preco:58.00},
+const ENV_TIPOS=['E-mail (Outlook/Exchange)','Arquivos (SharePoint)','Arquivos (OneDrive)','Calendário','Contatos','Chat (Teams)','Outro'];
+const LIC_DATA=[
+  {id:'lBizS',nome:'Business Starter',preco:40.90},{id:'lBizSt',nome:'Business Standard',preco:81.80},{id:'lBizP',nome:'Business Plus',preco:128.40},
+  
+  {id:'lEntS',nome:'Enterprise Starter',preco:63.90},{id:'lEntSt',nome:'Enterprise Standard',preco:156.20},{id:'lEntP',nome:'Enterprise Plus',preco:203.00},
+  {id:'lFrS',nome:'Frontline Starter',preco:30.00},{id:'lFrSt',nome:'Frontline Standard',preco:70.00},{id:'lFrP',nome:'Frontline Plus',preco:93.00},
+  {id:'lGemB',nome:'Gemini Business (add-on)',preco:132.36},{id:'lGemE',nome:'Gemini Enterprise Standard (add-on)',preco:185.31},
+  {id:'lGemEP',nome:'Gemini Enterprise Plus (add-on)',preco:317.67},{id:'lGemEF',nome:'Gemini Enterprise Frontline (add-on)',preco:79.42},
+  {id:'lCIP',nome:'Cloud Identity Premium',preco:35.00},{id:'lVault',nome:'Google Vault',preco:30.00},{id:'lAppC',nome:'AppSheet Core',preco:58.00}
 ];
+const FAIXA_MAP={
+  f1_std:{usd:420,label:'Até 20 — Standard'},f1_prm:{usd:660,label:'Até 20 — Premium'},
+  f2_std:{usd:900,label:'21–50 — Standard'},f2_prm:{usd:1200,label:'21–50 — Premium'},
+  f3_std:{usd:1020,label:'51–70 — Standard'},f3_prm:{usd:1320,label:'51–70 — Premium'},
+  f4_std:{usd:1200,label:'71–100 — Standard'},f4_prm:{usd:1560,label:'71–100 — Premium'},
+  f5_std:{usd:2400,label:'101–300 — Standard'},f5_prm:{usd:3360,label:'101–300 — Premium'},
+  f6_std:{usd:3720,label:'301–500 — Standard'},f6_prm:{usd:4860,label:'301–500 — Premium'},
+  f7_std:{usd:6120,label:'501–1000 — Standard'},f7_prm:{usd:7020,label:'501–1000 — Premium'}
+};
+let envRows=[],selectedTrain=null,selectedTrainUsd=0,selectedTrainLabel='';
+const v=id=>parseFloat(document.getElementById(id)?.value)||0;
+const vi=id=>parseInt(document.getElementById(id)?.value)||0;
+const gs=id=>document.getElementById(id)?.value||'';
+const se=(id,val)=>{const el=document.getElementById(id);if(el)el.textContent=val;};
+const brl=n=>'R$ '+n.toLocaleString('pt-BR',{minimumFractionDigits:2,maximumFractionDigits:2});
+const usd=n=>'USD '+n.toLocaleString('pt-BR',{minimumFractionDigits:2,maximumFractionDigits:2});
+const gb=n=>n.toLocaleString('pt-BR',{minimumFractionDigits:2,maximumFractionDigits:2})+' GB';
+const gbVal=r=>(r.gb||0)*(r.unit==='TB'?1024:1);
 
-let envRows = [];
-
-let selectedTrain = null;
-
-// ─── HELPERS ────────────────────────────────────────────────
-const v  = id => parseFloat(document.getElementById(id)?.value) || 0;
-const vi = id => parseInt(document.getElementById(id)?.value)   || 0;
-const gs = id => document.getElementById(id)?.value || '';
-const se = (id,val) => { const el=document.getElementById(id); if(el) el.textContent=val; };
-const brl = n => 'R$ ' + n.toLocaleString('pt-BR',{minimumFractionDigits:2,maximumFractionDigits:2});
-const usd = n => 'USD ' + n.toLocaleString('pt-BR',{minimumFractionDigits:2,maximumFractionDigits:2});
-const gb  = n => n.toLocaleString('pt-BR',{minimumFractionDigits:2,maximumFractionDigits:2}) + ' GB';
-const gbVal = r => (r.gb||0) * (r.unit==='TB'?1024:1);
-
-// ─── ENV TABLE ──────────────────────────────────────────────
 function renderEnvTable(){
-  const tbody = document.getElementById('envBody');
-  tbody.innerHTML='';
-  envRows.forEach((row,i)=>{
+  const tbody=document.getElementById('envBody');tbody.innerHTML='';
+  envRows.forEach(function(row,i){
     const tr=document.createElement('tr');
-    tr.innerHTML=`
-      <td><input type="text" value="${row.nome}" onchange="envRows[${i}].nome=this.value;calc()"></td>
-      <td><select onchange="envRows[${i}].tipo=this.value;calc()" style="font-size:12px;">${ENV_TIPOS.map(t=>`<option value="${t}"${t===row.tipo?' selected':''}>${t}</option>`).join('')}</select></td>
-      <td><input type="number" step="0.01" min="0" value="${row.gb}" style="text-align:right" onchange="envRows[${i}].gb=parseFloat(this.value)||0;calc()"></td>
-      <td><select onchange="envRows[${i}].unit=this.value;calc()" style="font-size:12px;padding:6px 4px;border:1px solid transparent;border-radius:6px;background:transparent;color:var(--text);font-family:'DM Sans',sans-serif;"><option value="GB"${(row.unit||'GB')==='GB'?' selected':''}>GB</option><option value="TB"${row.unit==='TB'?' selected':''}>TB</option></select></td>
-      <td><select onchange="envRows[${i}].migrar=this.value;calc()"><option value="sim"${row.migrar==='sim'?' selected':''}>Sim</option><option value="parcial"${row.migrar==='parcial'?' selected':''}>Parcial</option><option value="nao"${row.migrar==='nao'?' selected':''}>Não</option></select></td>
-      <td><input type="text" value="${row.obs||''}" onchange="envRows[${i}].obs=this.value"></td>
-      <td><button class="del-btn" onclick="delEnvRow(${i})">×</button></td>`;
+    const selTipo=ENV_TIPOS.map(function(t){return '<option'+(t===row.tipo?' selected':'')+'>'+t+'</option>';}).join('');
+    const unitGB=(row.unit||'GB')==='GB';
+    const migSim=row.migrar==='sim';
+    const migPar=row.migrar==='parcial';
+    const migNao=row.migrar==='nao';
+    tr.innerHTML=
+      '<td><input type="text" value="'+row.nome+'" onchange="envRows['+i+'].nome=this.value;calc()"></td>'+
+      '<td><select onchange="envRows['+i+'].tipo=this.value;calc()" style="font-size:12px;">'+selTipo+'</select></td>'+
+      '<td><input type="number" step="0.01" min="0" value="'+row.gb+'" style="text-align:right;" onchange="envRows['+i+'].gb=parseFloat(this.value)||0;calc()"></td>'+
+      '<td><select onchange="envRows['+i+'].unit=this.value;calc()">'+
+        '<option value="GB"'+(unitGB?' selected':'')+'>GB</option>'+
+        '<option value="TB"'+(!unitGB?' selected':'')+'>TB</option>'+
+      '</select></td>'+
+      '<td><select onchange="envRows['+i+'].migrar=this.value;calc()">'+
+        '<option value="sim"'+(migSim?' selected':'')+'>Sim</option>'+
+        '<option value="parcial"'+(migPar?' selected':'')+'>Parcial</option>'+
+        '<option value="nao"'+(migNao?' selected':'')+'>Não</option>'+
+      '</select></td>'+
+      '<td><input type="text" value="'+(row.obs||'')+'" onchange="envRows['+i+'].obs=this.value"></td>'+
+      '<td><button class="del-btn" onclick="delEnvRow('+i+')">\u00d7</button></td>';
     tbody.appendChild(tr);
   });
   calc();
 }
-function addEnvRow(){ envRows.push({nome:'',tipo:ENV_TIPOS[0],gb:0,unit:'GB',migrar:'sim',obs:''}); renderEnvTable(); }
-function delEnvRow(i){ envRows.splice(i,1); renderEnvTable(); }
-
-// ─── TRAINING CARDS ─────────────────────────────────────────
-// selectedTrain = 'f1_std' | 'f1_prm' | 'f2_std' ... | null
-// selectedTrainUsd = price in USD
-
-let selectedTrainUsd = 0;
-let selectedTrainLabel = '';
-
-const FAIXA_MAP = {
-  f1_std:{usd:420,  label:'Até 20 — Standard'},
-  f1_prm:{usd:660,  label:'Até 20 — Premium'},
-  f2_std:{usd:900,  label:'21–50 — Standard'},
-  f2_prm:{usd:1200, label:'21–50 — Premium'},
-  f3_std:{usd:1020, label:'51–70 — Standard'},
-  f3_prm:{usd:1320, label:'51–70 — Premium'},
-  f4_std:{usd:1200, label:'71–100 — Standard'},
-  f4_prm:{usd:1560, label:'71–100 — Premium'},
-  f5_std:{usd:2400, label:'101–300 — Standard'},
-  f5_prm:{usd:3360, label:'101–300 — Premium'},
-  f6_std:{usd:3720, label:'301–500 — Standard'},
-  f6_prm:{usd:4860, label:'301–500 — Premium'},
-  f7_std:{usd:6120, label:'501–1000 — Standard'},
-  f7_prm:{usd:7020, label:'501–1000 — Premium'},
-};
+function addEnvRow(){envRows.push({nome:'',tipo:ENV_TIPOS[0],gb:0,unit:'GB',migrar:'sim',obs:''});renderEnvTable();}
+function delEnvRow(i){envRows.splice(i,1);renderEnvTable();}
 
 function highlightFaixaByUsers(){
-  const usuarios = vi('usuarios');
-  const faixaIdx = usuarios<=20?1:usuarios<=50?2:usuarios<=70?3:usuarios<=100?4:usuarios<=300?5:usuarios<=500?6:7;
+  const u=vi('usuarios');
+  const fi=u<=20?1:u<=50?2:u<=70?3:u<=100?4:u<=300?5:u<=500?6:7;
   for(let i=1;i<=7;i++){
-    const el=document.getElementById('faixa'+i);
-    if(!el) continue;
+    const el=document.getElementById('faixa'+i);if(!el)continue;
     const lbl=el.querySelector('div');
-    if(i===faixaIdx){
-      el.style.background='var(--blue-bg)';
-      el.style.borderRadius='var(--r)';
-      el.style.padding='10px';
-      el.style.marginLeft='-10px';
-      el.style.marginRight='-10px';
-      if(lbl) lbl.style.color='var(--blue-dark)';
-    } else {
-      el.style.background='';
-      el.style.padding='';
-      el.style.marginLeft='';
-      el.style.marginRight='';
-      if(lbl) lbl.style.color='var(--text2)';
-    }
+    if(i===fi){el.style.background='var(--blue-bg)';el.style.borderRadius='var(--r)';el.style.padding='10px';el.style.marginLeft='-10px';el.style.marginRight='-10px';if(lbl)lbl.style.color='var(--blue-dark)';}
+    else{el.style.background='';el.style.padding='';el.style.marginLeft='';el.style.marginRight='';if(lbl)lbl.style.color='var(--text2)';}
   }
-  const infoEl=document.getElementById('trainFaixaInfo');
-  if(infoEl) infoEl.textContent=`Faixa recomendada para ${usuarios} usuários destacada em azul. Você pode selecionar qualquer plano de qualquer faixa.`;
+  const info=document.getElementById('trainFaixaInfo');
+  if(info&&u>0)info.textContent='Faixa recomendada para '+u+' usuários destacada em azul. Você pode selecionar qualquer plano de qualquer faixa.';
 }
 
 function updateTrainCards(){
   Object.keys(FAIXA_MAP).forEach(key=>{
-    const card=document.getElementById('tc_'+key);
-    const ck=document.getElementById('ck_'+key);
-    if(!card||!ck) return;
+    const card=document.getElementById('tc_'+key),ck=document.getElementById('ck_'+key);
+    if(!card||!ck)return;
     const isPrm=key.endsWith('prm');
-    if(selectedTrain===key){
-      card.className='train-card '+(isPrm?'selected-premium':'selected');
-      ck.textContent='✓';
-      ck.style.background=isPrm?'var(--purple)':'var(--blue)';
-      ck.style.borderColor=isPrm?'var(--purple)':'var(--blue)';
-      ck.style.color='#fff';
-    } else {
-      card.className='train-card';
-      ck.textContent='';
-      ck.style.background='';
-      ck.style.borderColor='';
-      ck.style.color='';
-    }
+    if(selectedTrain===key){card.className='train-card '+(isPrm?'selected-premium':'selected');ck.textContent='✓';ck.style.background=isPrm?'var(--purple)':'var(--blue)';ck.style.borderColor=isPrm?'var(--purple)':'var(--blue)';ck.style.color='#fff';}
+    else{card.className='train-card';ck.textContent='';ck.style.background='';ck.style.borderColor='';ck.style.color='';}
   });
-  const selEl=document.getElementById('trainSelecionado');
-  const noneEl=document.getElementById('trainNenhum');
+  const selEl=document.getElementById('trainSelecionado'),noneEl=document.getElementById('trainNenhum');
   if(selectedTrain&&FAIXA_MAP[selectedTrain]){
-    const cambio=v('cambio')||5.90;
-    const d=FAIXA_MAP[selectedTrain];
-    if(selEl){selEl.style.display='block';selEl.textContent=`✓ Plano selecionado: ${d.label} — USD ${d.usd.toLocaleString('pt-BR')} ≈ ${brl(d.usd*cambio)}`;}
-    if(noneEl) noneEl.style.display='none';
-    selectedTrainUsd=d.usd;
-    selectedTrainLabel=d.label;
-  } else {
-    if(selEl) selEl.style.display='none';
-    if(noneEl){noneEl.style.display='block';}
-    selectedTrainUsd=0;
-    selectedTrainLabel='Não incluído';
+    const cambio=v('cambio')||5.90,d=FAIXA_MAP[selectedTrain];
+    if(selEl){selEl.style.display='block';selEl.textContent='✓ Plano selecionado: '+d.label+' — USD '+d.usd.toLocaleString('pt-BR')+' ≈ '+brl(d.usd*cambio);}
+    if(noneEl)noneEl.style.display='none';
+    selectedTrainUsd=d.usd;selectedTrainLabel=d.label;
+  }else{
+    if(selEl)selEl.style.display='none';
+    if(noneEl)noneEl.style.display='block';
+    selectedTrainUsd=0;selectedTrainLabel='';
   }
 }
 
-function selectTrain(key,usd){
-  if(selectedTrain===key){ selectedTrain=null; selectedTrainUsd=0; selectedTrainLabel=''; }
-  else { selectedTrain=key; selectedTrainUsd=usd; selectedTrainLabel=FAIXA_MAP[key]?.label||''; }
-  updateTrainCards();
-  calc();
+function selectTrain(key){
+  selectedTrain=(selectedTrain===key)?null:key;
+  if(selectedTrain&&FAIXA_MAP[selectedTrain]){selectedTrainUsd=FAIXA_MAP[selectedTrain].usd;selectedTrainLabel=FAIXA_MAP[selectedTrain].label;}
+  else{selectedTrainUsd=0;selectedTrainLabel='';}
+  updateTrainCards();calc();
 }
 
-function renderTrainCards(){
-  highlightFaixaByUsers();
-  updateTrainCards();
-}
-
-// ─── TOGGLE MIG TYPE ────────────────────────────────────────
 function toggleMigType(){
-  const t = gs('migTipo');
-  document.getElementById('blockCloudm').style.display = (t==='cloudm'||t==='ambos')?'block':'none';
-  document.getElementById('blockImap').style.display   = (t==='imap'  ||t==='ambos')?'block':'none';
+  const t=gs('migTipo');
+  document.getElementById('blockCloudm').style.display=(t==='cloudm'||t==='ambos')?'block':'none';
+  document.getElementById('blockImap').style.display=(t==='imap'||t==='ambos')?'block':'none';
 }
 
-// ─── MAIN CALC ──────────────────────────────────────────────
 function calc(){
-  const cambio  = v('cambio')||5.90;
-  const usuarios= vi('usuarios');
-
-  // Ambientes
-  const totalGbAll = envRows.reduce((s,r)=>s+gbVal(r),0);
-  const totalGbMig = envRows.filter(r=>r.migrar!=='nao').reduce((s,r)=>s+gbVal(r),0);
-  se('p2TotalAll', gb(totalGbAll));
-  se('p2TotalMig', gb(totalGbMig));
-  se('p2Amb', envRows.length+' ambientes');
-
-  // CloudM
-  const cloudmGb    = v('cloudmGb')||10;
-  const cloudmPreco = v('cloudmPreco')||14;
-  const cloudmLics  = Math.ceil(totalGbMig/cloudmGb);
-  const cloudmUsdV  = cloudmLics*cloudmPreco;
-  const cloudmBrlV  = cloudmUsdV*cambio;
-  se('cmGb',   gb(totalGbMig));
-  se('cmLics', cloudmLics+' licenças');
-  se('cmUsd',  usd(cloudmUsdV));
-  se('cmBrl',  brl(cloudmBrlV));
-  if(document.getElementById('cm2GbLabel')) document.getElementById('cm2GbLabel').textContent=cloudmGb;
-
-  // IMAP
-  const imapGbV   = v('imapGb');
-  const imapTaxaV = v('imapTaxa')||250;
-  const imapDias  = imapGbV/50;
-  const imapHoras = Math.ceil(imapDias*8);
-  const imapCusto = imapHoras*imapTaxaV;
-  se('imGb',    gb(imapGbV));
-  se('imDias',  imapDias.toFixed(1)+' dias');
-  se('imHoras', imapHoras+' horas');
-  se('imCusto', brl(imapCusto));
-
-  // Chat
-  const chatOn   = gs('migChat')==='1';
-  const chatHorasV= v('chatHoras')||30;
-  const chatTaxaV = v('chatTaxa')||250;
-  const chatCustoV= chatHorasV*chatTaxaV;
-  document.getElementById('blockChat').style.display = chatOn?'block':'none';
-  se('chatHorasOut', chatHorasV+'h');
-  se('chatCusto', brl(chatCustoV));
-
-  // Total migração
-  const migTipo = gs('migTipo');
-  let migSub = 0;
-  if(migTipo==='cloudm'||migTipo==='ambos') migSub += cloudmBrlV;
-  if(migTipo==='imap'  ||migTipo==='ambos') migSub += imapCusto;
-  if(chatOn) migSub += chatCustoV;
-  const margemMigV = v('margemMig')||0;
-  const migMargemBrl= migSub*(margemMigV/100);
-  const migTotalBrl = migSub+migMargemBrl;
-  se('migSub',   brl(migSub));
-  se('migMargem',brl(migMargemBrl));
-  se('migTotal', brl(migTotalBrl));
-  const mmRow = document.getElementById('migMargemRow');
-  if(mmRow) mmRow.style.display = margemMigV>0?'flex':'none';
-
-  // Licenças
-  let licSubBrl=0;
-  LIC_DATA.forEach(l=>{ licSubBrl += vi(l.id)*l.preco; });
-  const margemLicV   = v('margemLic')||0;
-  const licMargemBrl = licSubBrl*(margemLicV/100);
-  const licTotalBrl  = licSubBrl+licMargemBrl;
-  const msCustoManual= v('msCustoManual')||0;
-  const licDiff      = licTotalBrl-msCustoManual;
-  se('licSubBrl',   brl(licSubBrl));
-  se('licMargemPct', margemLicV+'%');
-  se('licMargemVal', brl(licMargemBrl));
-  se('licTotalBrl', brl(licTotalBrl));
-  se('licMsBrl',    brl(msCustoManual));
-  const licDiffEl = document.getElementById('licDiff');
-  if(licDiffEl){
-    licDiffEl.textContent=(licDiff>=0?'+':'')+brl(Math.abs(licDiff))+(licDiff>=0?' (Google custa mais)':' (Google custa menos)');
-    licDiffEl.style.color=licDiff>0?'var(--amber-text)':'var(--green-text)';
-  }
-  const lmRow=document.getElementById('licMargemRow');
-  if(lmRow) lmRow.style.display=margemLicV>0?'flex':'none';
-
-  const totalLic = LIC_DATA.reduce((s,l)=>s+vi(l.id),0);
-  const licAlert = document.getElementById('licAlerta');
-  if(licAlert){
-    if(totalLic!==usuarios&&usuarios>0&&totalLic>0){
-      licAlert.style.display='block';
-      licAlert.textContent=`Atenção: ${usuarios} usuários mas ${totalLic} licenças distribuídas. Diferença: ${totalLic-usuarios>0?'+':''}${totalLic-usuarios}.`;
-    } else { licAlert.style.display='none'; }
-  }
-
-  // Treinamento
-  const trainUsd  = selectedTrainUsd||0;
-  const trainBrl  = trainUsd*cambio;
-  const tecOn     = gs('trainTecnico')==='1';
-  const tecCusto  = tecOn?1000:0;
-  const trainTotal= trainBrl+tecCusto;
-  se('trainPlanoNome', selectedTrainLabel||'Não selecionado');
-  se('trainUserCusto', trainUsd>0?usd(trainUsd):'Não incluído');
-  se('trainUserBrl',   trainUsd>0?brl(trainBrl):'Não incluído');
-  se('trainTecCusto',  tecOn?brl(tecCusto):'Não incluído');
-  se('trainTotalUsd',  trainUsd>0?usd(trainUsd):'—');
-  se('trainTotalBrl',  brl(trainTotal));
-
-  // Consultoria
-  const consultOn   = gs('consultoria')==='1' && v('consultHoras')>0;
-  const consultHorasV= v('consultHoras');
-  const consultCustoV= consultOn?consultHorasV*250:0;
-  const implOn      = gs('implementacao')==='1' && v('implHoras')>0;
-  const implHorasV  = v('implHoras');
-  const implCustoV  = implOn?implHorasV*250:0;
-  const suporteOn   = gs('suporte')!=='0' && v('suporteHoras')>0;
-  const suporteHorasV= v('suporteHoras');
-  const suporteCustoV= suporteOn?suporteHorasV*250:0;
-  const servicosTotal= consultCustoV+implCustoV+suporteCustoV;
-  se('consultCusto',  consultOn?brl(consultCustoV):'Não incluído');
-  se('implCusto',     implOn?brl(implCustoV):'Não incluído');
-  se('suporteCusto',  suporteOn?brl(suporteCustoV):'Não incluído');
-  se('servicosTotalBrl', brl(servicosTotal));
+  const cambio=v('cambio')||5.90;
+  const totalGbAll=envRows.reduce((s,r)=>s+gbVal(r),0);
+  const totalGbMig=envRows.filter(r=>r.migrar!=='nao').reduce((s,r)=>s+gbVal(r),0);
+  se('p2TotalAll',gb(totalGbAll));se('p2TotalMig',gb(totalGbMig));se('p2Amb',envRows.length+' ambientes');
+  const cloudmGbV=v('cloudmGb')||10,cloudmPrecoV=v('cloudmPreco')||14;
+  const cloudmLics=Math.ceil(totalGbMig/cloudmGbV),cloudmUsdV=cloudmLics*cloudmPrecoV,cloudmBrlV=cloudmUsdV*cambio;
+  se('cmGb',gb(totalGbMig));se('cmLics',cloudmLics+' licenças');se('cmUsd',usd(cloudmUsdV));se('cmBrl',brl(cloudmBrlV));
+  const imapGbV=v('imapGb'),imapTaxaV=v('imapTaxa')||250;
+  const imapDias=imapGbV/50,imapHoras=Math.ceil(imapDias*8),imapCusto=imapHoras*imapTaxaV;
+  se('imGb',gb(imapGbV));se('imDias',imapDias.toFixed(1)+' dias');se('imHoras',imapHoras+' horas');se('imCusto',brl(imapCusto));
+  const chatOn=gs('migChat')==='1',chatHorasV=v('chatHoras')||30,chatTaxaV=v('chatTaxa')||250,chatCustoV=chatHorasV*chatTaxaV;
+  document.getElementById('blockChat').style.display=chatOn?'block':'none';
+  se('chatHorasOut',chatHorasV+'h');se('chatCusto',brl(chatCustoV));
+  const migTipo=gs('migTipo');
+  let migSub=0;
+  if(migTipo==='cloudm'||migTipo==='ambos')migSub+=cloudmBrlV;
+  if(migTipo==='imap'||migTipo==='ambos')migSub+=imapCusto;
+  if(chatOn)migSub+=chatCustoV;
+  const margemMigV=v('margemMig')||0,migMargemBrl=migSub*(margemMigV/100),migTotalBrl=migSub+migMargemBrl;
+  se('migSub',brl(migSub));se('migMargem',brl(migMargemBrl));se('migTotal',brl(migTotalBrl));
+  const mmRow=document.getElementById('migMargemRow');if(mmRow)mmRow.style.display=margemMigV>0?'flex':'none';
+  let licSubBrl=0;LIC_DATA.forEach(l=>{licSubBrl+=vi(l.id)*l.preco;});
+  const margemLicV=v('margemLic')||0,licMargemBrl=licSubBrl*(margemLicV/100),licTotalBrl=licSubBrl+licMargemBrl;
+  const msCustoManual=v('msCustoManual')||0,licDiff=licTotalBrl-msCustoManual;
+  se('licSubBrl',brl(licSubBrl));se('licMargemPct',margemLicV+'%');se('licMargemVal',brl(licMargemBrl));se('licTotalBrl',brl(licTotalBrl));se('licMsBrl',brl(msCustoManual));
+  const licDiffEl=document.getElementById('licDiff');
+  if(licDiffEl){licDiffEl.textContent=(licDiff>=0?'+':'')+brl(Math.abs(licDiff))+(licDiff>=0?' (Google custa mais)':' (Google custa menos)');licDiffEl.style.color=licDiff>0?'var(--amber-text)':'var(--green-text)';}
+  const lmRow=document.getElementById('licMargemRow');if(lmRow)lmRow.style.display=margemLicV>0?'flex':'none';
+  const totalLic=LIC_DATA.reduce((s,l)=>s+vi(l.id),0);
+  const licAlert=document.getElementById('licAlerta');
+  if(licAlert){const bizTotal=vi('lBizS')+vi('lBizSt')+vi('lBizP');
+    if(bizTotal>300){licAlert.style.display='block';licAlert.textContent='Atenção: licenças Business limitadas a 300 usuários. Você distribuiu '+bizTotal+' licenças Business.';}
+    else if(totalLic!==vi('usuarios')&&vi('usuarios')>0&&totalLic>0){licAlert.style.display='block';licAlert.textContent='Atenção: '+vi('usuarios')+' usuários mas '+totalLic+' licenças distribuídas.';}
+    else licAlert.style.display='none';}
+  const trainUsd=selectedTrainUsd||0,trainBrl=trainUsd*cambio;
+  const tecOn=gs('trainTecnico')==='1',tecCusto=tecOn?1000:0,trainTotal=trainBrl+tecCusto;
+  se('trainPlanoNome',selectedTrainLabel||'Não selecionado');
+  se('trainUserCusto',trainUsd>0?usd(trainUsd):'Não incluído');
+  se('trainUserBrl',trainUsd>0?brl(trainBrl):'Não incluído');
+  se('trainTecCusto',tecOn?brl(tecCusto):'Não incluído');
+  se('trainTotalBrl',brl(trainTotal));
+  const consultOn=gs('consultoria')==='1'&&v('consultHoras')>0,consultCustoV=consultOn?v('consultHoras')*250:0;
+  const implOn=gs('implementacao')==='1'&&v('implHoras')>0,implCustoV=implOn?v('implHoras')*250:0;
+  const suporteOn=gs('suporte')!==''&&v('suporteHoras')>0,suporteCustoV=suporteOn?v('suporteHoras')*250:0;
+  const servicosTotal=consultCustoV+implCustoV+suporteCustoV;
+  se('consultCusto',consultOn?brl(consultCustoV):'Não incluído');
+  se('implCusto',implOn?brl(implCustoV):'Não incluído');
+  se('suporteCusto',suporteOn?brl(suporteCustoV):'Não incluído');
+  se('servicosTotalBrl',brl(servicosTotal));
 }
 
-// ─── RESUMO ─────────────────────────────────────────────────
 function renderResumo(){
   calc();
-  const cambio    = v('cambio')||5.90;
-  const usuarios  = vi('usuarios');
-  const clienteV  = gs('cliente')||'—';
-  const dominioV  = gs('dominio')||'—';
-  const vendedorV = gs('vendedor')||'—';
-  const contatoV  = gs('contato')||'—';
-  const validadeV = vi('validade')||15;
-  const periodoV  = gs('periodo')||'mensal';
-  const hoje      = new Date().toLocaleDateString('pt-BR');
-
-  document.getElementById('riBar').innerHTML=`
-    <div class="ri"><span class="ri-label">Cliente</span><span class="ri-val">${clienteV}</span></div>
-    <div class="ri"><span class="ri-label">Contato</span><span class="ri-val">${contatoV}</span></div>
-    <div class="ri"><span class="ri-label">Domínio</span><span class="ri-val">${dominioV}</span></div>
-    <div class="ri"><span class="ri-label">Usuários</span><span class="ri-val">${usuarios}</span></div>
-    <div class="ri"><span class="ri-label">Vendedor</span><span class="ri-val">${vendedorV}</span></div>
-    <div class="ri"><span class="ri-label">Data</span><span class="ri-val">${hoje}</span></div>
-    <div class="ri"><span class="ri-label">Validade</span><span class="ri-val">${validadeV} dias</span></div>
-    <div class="ri"><span class="ri-label">Câmbio</span><span class="ri-val">R$ ${cambio.toFixed(2)}</span></div>`;
-
-  // Ambientes
-  const totalGbMig = envRows.filter(r=>r.migrar!=='nao').reduce((s,r)=>s+gbVal(r),0);
+  const cambio=v('cambio')||5.90,usuarios=vi('usuarios');
+  const clienteV=gs('cliente')||'—',dominioV=gs('dominio')||'—',vendedorV=gs('vendedor')||'—',contatoV=gs('contato')||'—';
+  const validadeV=vi('validade')||15,periodoV=gs('periodo')||'mensal';
+  const hoje=new Date().toLocaleDateString('pt-BR');
+  document.getElementById('riBar').innerHTML=
+    '<div class="ri"><span class="ri-label">Cliente</span><span class="ri-val">'+clienteV+'</span></div>'+
+    '<div class="ri"><span class="ri-label">Contato</span><span class="ri-val">'+contatoV+'</span></div>'+
+    '<div class="ri"><span class="ri-label">Domínio</span><span class="ri-val">'+dominioV+'</span></div>'+
+    '<div class="ri"><span class="ri-label">Usuários</span><span class="ri-val">'+usuarios+'</span></div>'+
+    '<div class="ri"><span class="ri-label">Vendedor</span><span class="ri-val">'+vendedorV+'</span></div>'+
+    '<div class="ri"><span class="ri-label">Data</span><span class="ri-val">'+hoje+'</span></div>'+
+    '<div class="ri"><span class="ri-label">Validade</span><span class="ri-val">'+validadeV+' dias</span></div>'+
+    '<div class="ri"><span class="ri-label">Câmbio</span><span class="ri-val">R$ '+cambio.toFixed(2)+'</span></div>';
+  const totalGbMig=envRows.filter(r=>r.migrar!=='nao').reduce((s,r)=>s+gbVal(r),0);
   let bdAmb='';
   envRows.forEach(r=>{
     const tag=r.migrar==='sim'?'<span class="tag ok">Migrar</span>':r.migrar==='parcial'?'<span class="tag warn">Parcial</span>':'<span class="tag">Não</span>';
-    bdAmb+=`<div class="bd-row"><span class="bn">${r.nome} <span style="font-size:11px;color:var(--text3)">${r.tipo}</span>${r.obs?` — ${r.obs}`:''}</span><span class="bv">${r.gb} ${r.unit||'GB'} (${gb(gbVal(r))}) ${tag}</span></div>`;
+    bdAmb+='<div class="bd-row"><span class="bn">'+r.nome+' <small style="color:var(--text3)">'+r.tipo+'</small></span><span class="bv">'+r.gb+' '+(r.unit||'GB')+' ('+gbVal(r).toFixed(0)+' GB) '+tag+'</span></div>';
   });
-  bdAmb+=`<div class="bd-row total"><span class="bn">Total a migrar</span><span class="bv">${gb(totalGbMig)}</span></div>`;
+  bdAmb+='<div class="bd-row total"><span class="bn">Total a migrar</span><span class="bv">'+gb(totalGbMig)+'</span></div>';
   document.getElementById('bdAmbientes').innerHTML=bdAmb;
-
-  // Migração
-  const migTipo   = gs('migTipo');
-  const cloudmGbV = v('cloudmGb')||10;
-  const cloudmPrV = v('cloudmPreco')||14;
-  const cloudmLics= Math.ceil(totalGbMig/cloudmGbV);
-  const cloudmUsdV= cloudmLics*cloudmPrV;
-  const cloudmBrlV= cloudmUsdV*cambio;
-  const imapGbV   = v('imapGb');
-  const imapTaxaV = v('imapTaxa')||250;
-  const imapHoras = Math.ceil((imapGbV/50)*8);
-  const imapCusto = imapHoras*imapTaxaV;
-  const chatOn    = gs('migChat')==='1';
-  const chatCustoV= chatOn?v('chatHoras')*v('chatTaxa'):0;
-  let migSubV=0;
-  let bdMig='';
-  if(migTipo==='cloudm'||migTipo==='ambos'){
-    bdMig+=`<div class="bd-row"><span class="bn">CloudM — ${cloudmLics} licenças × USD ${cloudmPrV} (${cloudmGbV} GB/lic.)</span><span class="bv">${brl(cloudmBrlV)}</span></div>`;
-    migSubV+=cloudmBrlV;
-  }
-  if(migTipo==='imap'||migTipo==='ambos'){
-    bdMig+=`<div class="bd-row"><span class="bn">IMAP — ${imapHoras}h × R$ ${imapTaxaV}/hora</span><span class="bv">${brl(imapCusto)}</span></div>`;
-    migSubV+=imapCusto;
-  }
-  if(chatOn){
-    bdMig+=`<div class="bd-row"><span class="bn">Migração chat Teams (via API) — ${v('chatHoras')}h</span><span class="bv">${brl(chatCustoV)}</span></div>`;
-    migSubV+=chatCustoV;
-  }
-  const margemMigV  = v('margemMig')||0;
-  const migMargemBrl= migSubV*(margemMigV/100);
-  const migTotalBrl = migSubV+migMargemBrl;
-  if(margemMigV>0) bdMig+=`<div class="bd-row"><span class="bn">Margem de serviço (${margemMigV}%)</span><span class="bv">${brl(migMargemBrl)}</span></div>`;
-  bdMig+=`<div class="bd-row total"><span class="bn">Total migração (custo único)</span><span class="bv">${brl(migTotalBrl)}</span></div>`;
+  const cloudmGbV=v('cloudmGb')||10,cloudmPrV=v('cloudmPreco')||14;
+  const cloudmLics=Math.ceil(totalGbMig/cloudmGbV),cloudmBrlV=cloudmLics*cloudmPrV*cambio;
+  const imapGbV=v('imapGb'),imapTaxaV=v('imapTaxa')||250,imapHoras=Math.ceil((imapGbV/50)*8),imapCusto=imapHoras*imapTaxaV;
+  const chatOn=gs('migChat')==='1',chatCustoV=chatOn?v('chatHoras')*(v('chatTaxa')||250):0;
+  const migTipo=gs('migTipo');let migSubV=0,bdMig='';
+  if(migTipo==='cloudm'||migTipo==='ambos'){bdMig+='<div class="bd-row"><span class="bn">CloudM — '+cloudmLics+' licenças × USD '+cloudmPrV+' ('+cloudmGbV+' GB/lic.)</span><span class="bv">'+brl(cloudmBrlV)+'</span></div>';migSubV+=cloudmBrlV;}
+  if(migTipo==='imap'||migTipo==='ambos'){bdMig+='<div class="bd-row"><span class="bn">IMAP — '+imapHoras+'h × R$ '+imapTaxaV+'/hora</span><span class="bv">'+brl(imapCusto)+'</span></div>';migSubV+=imapCusto;}
+  if(chatOn){bdMig+='<div class="bd-row"><span class="bn">Migração chat Teams (via API)</span><span class="bv">'+brl(chatCustoV)+'</span></div>';migSubV+=chatCustoV;}
+  const margemMigV=v('margemMig')||0,migTotalBrl=migSubV*(1+margemMigV/100);
+  if(margemMigV>0)bdMig+='<div class="bd-row"><span class="bn">Margem de serviço ('+margemMigV+'%)</span><span class="bv">'+brl(migSubV*margemMigV/100)+'</span></div>';
+  bdMig+='<div class="bd-row total"><span class="bn">Total migração</span><span class="bv">'+brl(migTotalBrl)+'</span></div>';
   document.getElementById('bdMigracao').innerHTML=bdMig;
-
-  // Licenças
   document.getElementById('bdLicPeriodo').textContent=periodoV;
-  let licSubBrl=0;
-  let bdLic='';
-  LIC_DATA.forEach(l=>{
-    const qtd=vi(l.id);
-    if(qtd>0){
-      const sub=qtd*l.preco;
-      licSubBrl+=sub;
-      bdLic+=`<div class="bd-row"><span class="bn">${l.nome} (${qtd} × ${brl(l.preco)})</span><span class="bv">${brl(sub)}</span></div>`;
-    }
-  });
-  const margemLicV  = v('margemLic')||0;
-  const licMargemBrl= licSubBrl*(margemLicV/100);
-  const licTotalBrl = licSubBrl+licMargemBrl;
-  if(margemLicV>0) bdLic+=`<div class="bd-row"><span class="bn">Margem (${margemLicV}%)</span><span class="bv">${brl(licMargemBrl)}</span></div>`;
-  bdLic+=`<div class="bd-row total"><span class="bn">Total licenças / ${periodoV}</span><span class="bv">${brl(licTotalBrl)}</span></div>`;
+  let licSubBrl=0,bdLic='';
+  LIC_DATA.forEach(l=>{const qtd=vi(l.id);if(qtd>0){const sub=qtd*l.preco;licSubBrl+=sub;bdLic+='<div class="bd-row"><span class="bn">'+l.nome+' ('+qtd+' × '+brl(l.preco)+')</span><span class="bv">'+brl(sub)+'</span></div>';}});
+  const margemLicV=v('margemLic')||0,licTotalBrl=licSubBrl*(1+margemLicV/100);
+  if(margemLicV>0)bdLic+='<div class="bd-row"><span class="bn">Margem ('+margemLicV+'%)</span><span class="bv">'+brl(licSubBrl*margemLicV/100)+'</span></div>';
+  bdLic+='<div class="bd-row total"><span class="bn">Total licenças / '+periodoV+'</span><span class="bv">'+brl(licTotalBrl)+'</span></div>';
   document.getElementById('bdLicencas').innerHTML=bdLic;
-
-  // Treinamento
-  const trainUsdR  = selectedTrainUsd||0;
-  const trainBrlR  = trainUsdR*cambio;
-  const tecOnR     = gs('trainTecnico')==='1';
-  const tecCustoR  = tecOnR?1000:0;
-  const trainTotal = trainBrlR+tecCustoR;
+  const trainUsdR=selectedTrainUsd||0,trainBrlR=trainUsdR*cambio,tecOnR=gs('trainTecnico')==='1',tecCustoR=tecOnR?1000:0,trainTotal=trainBrlR+tecCustoR;
   let bdTrain='';
-  if(selectedTrainLabel&&selectedTrainUsd>0){
-    bdTrain+=`<div class="bd-row"><span class="bn">Plano ${selectedTrainLabel}</span><span class="bv">${usd(selectedTrainUsd)} ≈ ${brl(trainBrlR)}</span></div>`;
-  } else {
-    bdTrain+=`<div class="bd-row"><span class="bn">Treinamento de usuários</span><span class="bv">Não incluído</span></div>`;
-  }
-  if(tecOnR) bdTrain+=`<div class="bd-row"><span class="bn">Treinamento técnico (admins) — 4h × R$ 250</span><span class="bv">${brl(tecCustoR)}</span></div>`;
-  bdTrain+=`<div class="bd-row total"><span class="bn">Total treinamento</span><span class="bv">${brl(trainTotal)}</span></div>`;
+  if(selectedTrainLabel&&selectedTrainUsd>0)bdTrain+='<div class="bd-row"><span class="bn">Plano '+selectedTrainLabel+'</span><span class="bv">'+usd(selectedTrainUsd)+' ≈ '+brl(trainBrlR)+'</span></div>';
+  else bdTrain+='<div class="bd-row"><span class="bn">Treinamento de usuários</span><span class="bv">Não incluído</span></div>';
+  if(tecOnR)bdTrain+='<div class="bd-row"><span class="bn">Treinamento técnico (admins) — 4h × R$ 250</span><span class="bv">'+brl(tecCustoR)+'</span></div>';
+  bdTrain+='<div class="bd-row total"><span class="bn">Total treinamento</span><span class="bv">'+brl(trainTotal)+'</span></div>';
   document.getElementById('bdTreinamento').innerHTML=bdTrain;
-
-  // Consultoria
-  const consultOn   = gs('consultoria')==='1' && v('consultHoras')>0;
-  const consultHorasV= v('consultHoras');
-  const consultCustoV= consultOn?consultHorasV*250:0;
-  const implOn      = gs('implementacao')==='1' && v('implHoras')>0;
-  const implHorasV  = v('implHoras');
-  const implCustoV  = implOn?implHorasV*250:0;
-  const suporteOn   = gs('suporte')!=='0' && v('suporteHoras')>0;
-  const suporteHorasV= v('suporteHoras');
-  const suporteCustoV= suporteOn?suporteHorasV*250:0;
-  const servicosTotal= consultCustoV+implCustoV+suporteCustoV;
+  const consultOn=gs('consultoria')==='1'&&v('consultHoras')>0,consultCustoV=consultOn?v('consultHoras')*250:0;
+  const implOn=gs('implementacao')==='1'&&v('implHoras')>0,implCustoV=implOn?v('implHoras')*250:0;
+  const suporteOn=gs('suporte')!==''&&v('suporteHoras')>0,suporteCustoV=suporteOn?v('suporteHoras')*250:0;
+  const servicosTotal=consultCustoV+implCustoV+suporteCustoV;
   let bdCons='';
-  if(consultOn) bdCons+=`<div class="bd-row"><span class="bn">Consultoria de dados/metadados — ${consultHorasV}h × R$ 250</span><span class="bv">${brl(consultCustoV)}</span></div>`;
-  if(implOn) bdCons+=`<div class="bd-row"><span class="bn">Implementação — ${implHorasV}h × R$ 250</span><span class="bv">${brl(implCustoV)}</span></div>`;
-  if(suporteOn) bdCons+=`<div class="bd-row"><span class="bn">Suporte pós-migração — ${suporteHorasV}h × R$ 250</span><span class="bv">${brl(suporteCustoV)}</span></div>`;
-  if(!consultOn&&!implOn&&!suporteOn) bdCons='<div class="bd-row"><span class="bn">Nenhum serviço adicional</span><span class="bv">—</span></div>';
-  bdCons+=`<div class="bd-row total"><span class="bn">Total serviços adicionais</span><span class="bv">${brl(servicosTotal)}</span></div>`;
+  if(consultOn)bdCons+='<div class="bd-row"><span class="bn">Consultoria — '+v('consultHoras')+'h × R$ 250</span><span class="bv">'+brl(consultCustoV)+'</span></div>';
+  if(implOn)bdCons+='<div class="bd-row"><span class="bn">Implementação — '+v('implHoras')+'h × R$ 250</span><span class="bv">'+brl(implCustoV)+'</span></div>';
+  if(suporteOn)bdCons+='<div class="bd-row"><span class="bn">Suporte pós-migração — '+v('suporteHoras')+'h × R$ 250</span><span class="bv">'+brl(suporteCustoV)+'</span></div>';
+  if(!consultOn&&!implOn&&!suporteOn)bdCons='<div class="bd-row"><span class="bn">Nenhum serviço adicional</span><span class="bv">—</span></div>';
+  bdCons+='<div class="bd-row total"><span class="bn">Total serviços adicionais</span><span class="bv">'+brl(servicosTotal)+'</span></div>';
   document.getElementById('bdConsultoria').innerHTML=bdCons;
-
-  // Comparativo 1º ano
-  const msCustoManual= v('msCustoManual')||0;
-  const msAnual      = msCustoManual*12;
-  const gwAnual      = licTotalBrl*12;
-  const gwTotal1Ano  = gwAnual+migTotalBrl+trainTotal+servicosTotal;
-  const diffAnual    = gwTotal1Ano-msAnual;
-  document.getElementById('bdComparativo').innerHTML=`
-    <div class="bd-row"><span class="bn">Microsoft 365 — custo mensal atual</span><span class="bv">${brl(msCustoManual)}</span></div>
-    <div class="bd-row"><span class="bn">Microsoft 365 — total 12 meses</span><span class="bv">${brl(msAnual)}</span></div>
-    <div class="bd-row"><span class="bn">Google Workspace — licenças 12 meses</span><span class="bv">${brl(gwAnual)}</span></div>
-    <div class="bd-row"><span class="bn">Google — migração (custo único)</span><span class="bv">${brl(migTotalBrl)}</span></div>
-    <div class="bd-row"><span class="bn">Google — treinamento (custo único)</span><span class="bv">${brl(trainTotal)}</span></div>
-    <div class="bd-row"><span class="bn">Google — consultoria/suporte (custo único)</span><span class="bv">${brl(servicosTotal)}</span></div>
-    <div class="bd-row total"><span class="bn">Google — investimento total 1º ano</span><span class="bv">${brl(gwTotal1Ano)}</span></div>
-    <div class="bd-row total"><span class="bn" style="color:${diffAnual>0?'var(--amber-text)':'var(--green-text)'}">Diferença vs. Microsoft no 1º ano</span><span class="bv" style="color:${diffAnual>0?'var(--amber-text)':'var(--green-text)'}">${diffAnual>=0?'+':''}${brl(Math.abs(diffAnual))}</span></div>`;
-
-  // Total proposta
-  document.getElementById('bdTotal').innerHTML=`
-    <div class="bd-hdr">Resumo financeiro da proposta</div>
-    <div class="bd-row"><span class="bn">Migração (custo único)</span><span class="bv">${brl(migTotalBrl)}</span></div>
-    <div class="bd-row"><span class="bn">Treinamento (custo único)</span><span class="bv">${brl(trainTotal)}</span></div>
-    <div class="bd-row"><span class="bn">Consultoria/Suporte (custo único)</span><span class="bv">${brl(servicosTotal)}</span></div>
-    <div class="bd-row"><span class="bn">Licenças Google Workspace (${periodoV})</span><span class="bv">${brl(licTotalBrl)}</span></div>
-    <div class="bd-row total"><span class="bn">Total serviços únicos</span><span class="bv">${brl(migTotalBrl+trainTotal+servicosTotal)}</span></div>`;
-
-  // Metrics
-  document.getElementById('metricsGrid').innerHTML=`
-    <div class="mc blue"><div class="ml">Migração (único)</div><div class="mv">${brl(migTotalBrl)}</div><div class="ms">${cloudmLics} lic. CloudM</div></div>
-    <div class="mc default"><div class="ml">Licenças GWS/${periodoV}</div><div class="mv">${brl(licTotalBrl)}</div><div class="ms">${LIC_DATA.reduce((s,l)=>s+vi(l.id),0)} usuários</div></div>
-    <div class="mc purple"><div class="ml">Treinamento</div><div class="mv">${brl(trainTotal)}</div><div class="ms">${selTrain&&selTrain!=='none'?'Plano '+(selTrain==='std'?'Standard':'Premium'):'Sem plano'}</div></div>
-    <div class="mc ${diffAnual>0?'amber':'green'}"><div class="ml">Diferença 1º ano</div><div class="mv">${diffAnual>=0?'+':''}${brl(Math.abs(diffAnual))}</div><div class="ms">${diffAnual>0?'Google custa mais':'Google custa menos'}</div></div>`;
-
-  buildProposta(clienteV,contatoV,dominioV,vendedorV,usuarios,hoje,validadeV,periodoV,cambio,migTotalBrl,licTotalBrl,trainTotal,servicosTotal,gwTotal1Ano,msAnual,diffAnual,cloudmLics,cloudmPrV);
+  const msCustoManual=v('msCustoManual')||0,msAnual=msCustoManual*12,gwAnual=licTotalBrl*12;
+  const gwTotal1Ano=gwAnual+migTotalBrl+trainTotal+servicosTotal,diffAnual=gwTotal1Ano-msAnual;
+  document.getElementById('bdComparativo').innerHTML=
+    '<div class="bd-row"><span class="bn">Microsoft 365 — custo mensal atual</span><span class="bv">'+brl(msCustoManual)+'</span></div>'+
+    '<div class="bd-row"><span class="bn">Microsoft 365 — total 12 meses</span><span class="bv">'+brl(msAnual)+'</span></div>'+
+    '<div class="bd-row"><span class="bn">Google Workspace — licenças 12 meses</span><span class="bv">'+brl(gwAnual)+'</span></div>'+
+    '<div class="bd-row"><span class="bn">Google — migração (custo único)</span><span class="bv">'+brl(migTotalBrl)+'</span></div>'+
+    '<div class="bd-row"><span class="bn">Google — treinamento (custo único)</span><span class="bv">'+brl(trainTotal)+'</span></div>'+
+    '<div class="bd-row"><span class="bn">Google — serviços adicionais (custo único)</span><span class="bv">'+brl(servicosTotal)+'</span></div>'+
+    '<div class="bd-row total"><span class="bn">Google — investimento total 1º ano</span><span class="bv">'+brl(gwTotal1Ano)+'</span></div>'+
+    '<div class="bd-row total"><span class="bn" style="color:'+(diffAnual>0?'var(--amber-text)':'var(--green-text)')+'">Diferença vs. Microsoft no 1º ano</span><span class="bv" style="color:'+(diffAnual>0?'var(--amber-text)':'var(--green-text)')+'">'+(diffAnual>=0?'+':'')+brl(Math.abs(diffAnual))+'</span></div>';
+  document.getElementById('bdTotal').innerHTML=
+    '<div class="bd-hdr">Resumo financeiro da proposta</div>'+
+    '<div class="bd-row"><span class="bn">Migração (custo único)</span><span class="bv">'+brl(migTotalBrl)+'</span></div>'+
+    '<div class="bd-row"><span class="bn">Treinamento (custo único)</span><span class="bv">'+brl(trainTotal)+'</span></div>'+
+    '<div class="bd-row"><span class="bn">Consultoria/Suporte (custo único)</span><span class="bv">'+brl(servicosTotal)+'</span></div>'+
+    '<div class="bd-row"><span class="bn">Licenças GWS ('+periodoV+')</span><span class="bv">'+brl(licTotalBrl)+'</span></div>'+
+    '<div class="bd-row total"><span class="bn">Total serviços únicos</span><span class="bv">'+brl(migTotalBrl+trainTotal+servicosTotal)+'</span></div>';
+  document.getElementById('metricsGrid').innerHTML=
+    '<div class="mc blue"><div class="ml">Migração (único)</div><div class="mv">'+brl(migTotalBrl)+'</div><div class="ms">'+cloudmLics+' lic. CloudM</div></div>'+
+    '<div class="mc default"><div class="ml">Licenças GWS/'+periodoV+'</div><div class="mv">'+brl(licTotalBrl)+'</div><div class="ms">'+LIC_DATA.reduce((s,l)=>s+vi(l.id),0)+' usuários</div></div>'+
+    '<div class="mc purple"><div class="ml">Treinamento</div><div class="mv">'+brl(trainTotal)+'</div><div class="ms">'+(selectedTrainLabel||'Sem plano')+'</div></div>'+
+    '<div class="mc '+(diffAnual>0?'amber':'green')+'"><div class="ml">Diferença 1º ano</div><div class="mv">'+(diffAnual>=0?'+':'')+brl(Math.abs(diffAnual))+'</div><div class="ms">'+(diffAnual>0?'Google custa mais':'Google custa menos')+'</div></div>';
 }
 
-// ─── PROPOSTA TEXTO ─────────────────────────────────────────
-function buildProposta(cli,cont,dom,vend,usu,hoje,valid,periodo,cambio,migTotal,licTotal,trainTotal,servTotal,gwTotal,msTotal,diff,cloudmLics,cloudmPrV){
+function gerarProposta(){
+  renderResumo();
+  const cambio=v('cambio')||5.90,usuarios=vi('usuarios');
+  const cli=gs('cliente')||'Cliente',dom=gs('dominio')||'',vend=gs('vendedor')||'',emailV=gs('emailVendedor')||'';
+  const periodoV=gs('periodo')||'mensal',validadeV=vi('validade')||15;
+  const hoje=new Date().toLocaleDateString('pt-BR',{day:'2-digit',month:'long',year:'numeric'});
   const totalGbMig=envRows.filter(r=>r.migrar!=='nao').reduce((s,r)=>s+gbVal(r),0);
+  const cloudmGbV=v('cloudmGb')||10,cloudmPrV=v('cloudmPreco')||14;
+  const cloudmLics=Math.ceil(totalGbMig/cloudmGbV),cloudmBrlV=cloudmLics*cloudmPrV*cambio;
+  const margemMigV=v('margemMig')||0,migTotal=cloudmBrlV*(1+margemMigV/100);
   const licsAtivas=LIC_DATA.filter(l=>vi(l.id)>0);
-  const tecOn=gs('trainTecnico')==='1';
-
-  const txt=`
-PROPOSTA COMERCIAL — GOOGLE WORKSPACE
-servinformación Brasil · Localização Inteligente
-━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-
-Data: ${hoje}
-Validade: ${valid} dias
-Vendedor: ${vend}
-
-━━ DADOS DO CLIENTE ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-Empresa: ${cli}
-Contato: ${cont}
-Domínio: ${dom}
-Usuários: ${usu}
-
-━━ ESCOPO DA MIGRAÇÃO ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-${envRows.filter(r=>r.migrar!=='nao').map(r=>`• ${r.nome} (${r.tipo}): ${r.gb} ${r.unit||'GB'} (${gbVal(r).toFixed(2)} GB)${r.obs?` — ${r.obs}`:''}`).join('\n')}
-
-Total a migrar: ${totalGbMig.toFixed(2)} GB
-
-━━ MIGRAÇÃO ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-Ferramenta: CloudM
-Licenças necessárias: ${cloudmLics} licenças (${v('cloudmGb')||10} GB/lic. × USD ${cloudmPrV})
-Custo total de migração: ${brl(migTotal)}
-(Custo único — não recorrente)
-
-━━ LICENÇAS GOOGLE WORKSPACE (${periodo.toUpperCase()}) ━━━━━━━━━
-${licsAtivas.map(l=>`• ${l.nome}: ${vi(l.id)} usuários × ${brl(l.preco)} = ${brl(vi(l.id)*l.preco)}`).join('\n')}
-
-Total licenças/${periodo}: ${brl(licTotal)}
-
-━━ TREINAMENTO ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-Plano de treinamento usuários: ${selectedTrainLabel||'Não incluído'}${selectedTrainUsd>0?` — USD ${selectedTrainUsd.toLocaleString('pt-BR')} ≈ ${brl(selectedTrainUsd*cambio)}`:''}
-Treinamento técnico (admins): ${tecOn?`R$ 1.000,00 (4h × R$ 250/h)`:'Não incluído'}
-Total treinamento: ${brl(trainTotal)}
-
-━━ CONSULTORIA & SUPORTE ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-Total serviços adicionais: ${brl(servTotal)}
-• Implementação: incluída no total acima se aplicável
-
-━━ RESUMO FINANCEIRO ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-Migração (custo único):           ${brl(migTotal)}
-Treinamento (custo único):        ${brl(trainTotal)}
-Consultoria/Suporte (custo único):${brl(servTotal)}
-Licenças Google/${periodo}:      ${brl(licTotal)}
-─────────────────────────────────────────────────────────
-Total serviços únicos:            ${brl(migTotal+trainTotal+servTotal)}
-Investimento total 1º ano:        ${brl(gwTotal)}
-
-Comparativo: Microsoft 365 (1º ano) = ${brl(msTotal)}
-Diferença: ${diff>=0?'+':''}${brl(Math.abs(diff))} ${diff>0?'(Google representa maior investimento no 1º ano)':'(Google representa economia no 1º ano)'}
-
-━━ OBSERVAÇÕES ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-${gs('obsGeral')||'—'}
-• Permissões de pastas do SharePoint/OneDrive devem ser reconfiguradas manualmente após a migração.
-• O câmbio utilizado nesta proposta é de R$ ${cambio.toFixed(2)}/USD.
-• Proposta válida por ${valid} dias a partir da data de emissão.
-
-━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-servinformación Brasil — servinformacion.com
-`.trim();
-
-  document.getElementById('propostaTexto').value=txt;
-  document.getElementById('modalInfo').textContent=`Proposta para ${cli} — ${usu} usuários — ${hoje}`;
+  let licSubBrl=0;licsAtivas.forEach(l=>{licSubBrl+=vi(l.id)*l.preco;});
+  const margemLicV=v('margemLic')||0,licTotal=licSubBrl*(1+margemLicV/100),licAnual=licTotal*12;
+  const trainBrlV=(selectedTrainUsd||0)*cambio,tecOn=gs('trainTecnico')==='1',tecCusto=tecOn?1000:0,trainTotal=trainBrlV+tecCusto;
+  const consultOn=gs('consultoria')==='1'&&v('consultHoras')>0,consultCusto=consultOn?v('consultHoras')*250:0;
+  const implOn=gs('implementacao')==='1'&&v('implHoras')>0,implCusto=implOn?v('implHoras')*250:0;
+  const suporteOn=gs('suporte')!==''&&v('suporteHoras')>0,suporteCusto=suporteOn?v('suporteHoras')*250:0;
+  const servTotal=consultCusto+implCusto+suporteCusto;
+  const F=n=>'R$ '+n.toLocaleString('pt-BR',{minimumFractionDigits:2,maximumFractionDigits:2});
+  const U=n=>'USD '+n.toLocaleString('en-US',{minimumFractionDigits:2,maximumFractionDigits:2});
+  let licRowsHtml='';
+  licsAtivas.forEach(l=>{licRowsHtml+='<tr><td>'+l.nome+'</td><td align="center">'+vi(l.id)+'</td><td align="center">'+F(l.preco)+'</td><td align="center">'+F(vi(l.id)*l.preco)+'</td></tr>';});
+  let ambRowsHtml='';
+  envRows.filter(r=>r.migrar!=='nao').forEach(r=>{ambRowsHtml+='<tr><td>'+r.nome+'</td><td>'+r.tipo+'</td><td align="center">'+r.gb+' '+(r.unit||'GB')+'</td><td align="center">'+gbVal(r).toFixed(2)+' GB</td><td>'+(r.obs||'—')+'</td></tr>';});
+  let servRowsHtml='';
+  if(selectedTrainUsd>0)servRowsHtml+='<tr><td>Treinamento usuários — '+selectedTrainLabel+'</td><td align="center">—</td><td align="center">'+U(selectedTrainUsd)+'</td><td align="center">'+F(trainBrlV)+'</td></tr>';
+  if(tecOn)servRowsHtml+='<tr><td>Treinamento técnico (administradores)</td><td align="center">4h</td><td align="center">R$ 250,00</td><td align="center">'+F(tecCusto)+'</td></tr>';
+  if(consultOn)servRowsHtml+='<tr><td>Consultoria de dados e metadados</td><td align="center">'+v('consultHoras')+'h</td><td align="center">R$ 250,00</td><td align="center">'+F(consultCusto)+'</td></tr>';
+  if(implOn)servRowsHtml+='<tr><td>Implementação</td><td align="center">'+v('implHoras')+'h</td><td align="center">R$ 250,00</td><td align="center">'+F(implCusto)+'</td></tr>';
+  if(suporteOn)servRowsHtml+='<tr><td>Suporte pós-migração</td><td align="center">'+v('suporteHoras')+'h</td><td align="center">R$ 250,00</td><td align="center">'+F(suporteCusto)+'</td></tr>';
+  const css='*{box-sizing:border-box;margin:0;padding:0;}body{font-family:sans-serif;font-size:13px;color:#1a1714;background:#fff;}.page{max-width:800px;margin:0 auto;padding:40px 50px;}.capa{max-width:800px;margin:0 auto;min-height:90vh;display:flex;flex-direction:column;justify-content:space-between;padding:60px 50px;border-bottom:4px solid #1A5CFF;}.logo-wrap{display:flex;align-items:center;gap:12px;margin-bottom:60px;}.logo-icon{width:48px;height:48px;background:#1A5CFF;border-radius:10px;display:flex;align-items:center;justify-content:center;color:#fff;font-weight:700;font-size:20px;}.logo-name{font-size:18px;font-weight:600;}.logo-sub{font-size:12px;color:#6b6560;}.titulo{font-size:36px;font-weight:300;line-height:1.3;margin-bottom:16px;}.titulo strong{font-weight:600;color:#1A5CFF;}.subtit{font-size:16px;color:#6b6560;margin-bottom:40px;}.capa-info{font-size:13px;line-height:2;}.footer{font-size:12px;color:#9e9890;margin-top:40px;}h1{font-size:20px;font-weight:600;color:#1A5CFF;margin:40px 0 12px;padding-bottom:8px;border-bottom:2px solid #EEF2FF;}h2{font-size:15px;font-weight:600;margin:24px 0 10px;}p{line-height:1.8;margin-bottom:10px;}ul{margin:8px 0 12px 20px;line-height:1.9;}table{width:100%;border-collapse:collapse;margin:12px 0 20px;font-size:12px;}th{background:#1A5CFF;color:#fff;padding:8px 10px;text-align:left;font-weight:500;}td{padding:7px 10px;border-bottom:1px solid #e4e0d8;}tr:nth-child(even) td{background:#f8f7f4;}tr.tr-total td{background:#EEF2FF;font-weight:600;color:#1A5CFF;border-top:2px solid #1A5CFF;}.box{background:#EEF2FF;border-left:4px solid #1A5CFF;padding:14px 18px;border-radius:0 8px 8px 0;margin:12px 0;}.box p{margin:0;color:#1240CC;}.rfin{background:#f8f7f4;border:1px solid #e4e0d8;border-radius:10px;padding:20px;margin:20px 0;}.rfrow{display:flex;justify-content:space-between;padding:6px 0;border-bottom:1px dashed #e4e0d8;font-size:13px;}.rfrow:last-child{border-bottom:none;font-weight:600;font-size:15px;color:#1A5CFF;padding-top:12px;}.rfrow .rl{color:#6b6560;}.assin{margin-top:40px;padding-top:20px;border-top:1px solid #e4e0d8;}.pb{page-break-before:always;}.pbar{position:fixed;bottom:24px;right:24px;display:flex;gap:10px;z-index:999;}.pbtn{padding:10px 20px;border-radius:8px;font-size:13px;font-weight:500;cursor:pointer;border:none;}.pbtn.p{background:#1A5CFF;color:#fff;}.pbtn.s{background:#fff;color:#1a1714;border:1.5px solid #ccc;}@media print{.pbar{display:none;}.capa{page-break-after:always;}}';
+  const html='<!DOCTYPE html><html lang="pt-BR"><head><meta charset="UTF-8"><title>Proposta — '+cli+'</title><style>'+css+'</style></head><body>'
+    +'<div class="pbar"><button class="pbtn s" onclick="window.close()">Fechar</button><button class="pbtn p" onclick="window.print()">🖨️ Imprimir / Salvar PDF</button></div>'
+    +'<div class="capa"><div><div class="logo-wrap"><div class="logo-icon">S</div><div><div class="logo-name">servinformación Brasil</div><div class="logo-sub">Localização Inteligente</div></div></div>'
+    +'<div class="titulo">Proposta<br><strong>Técnica Comercial</strong><br>para '+cli+'</div>'
+    +'<div class="subtit">São Paulo, '+hoje+'</div>'
+    +'<div class="capa-info"><strong>'+cli+'</strong><br>'+dom+'<br><br>Prezados,<br><br>Apresentamos a proposta técnica e econômica para fornecer contas de <strong>Google Workspace</strong> para <strong>'+usuarios+' usuários</strong>.</div>'
+    +'</div><div class="footer">Proposta válida por '+validadeV+' dias · São Paulo, '+hoje+'</div></div>'
+    +'<div class="page pb"><h1>1. Carta de Apresentação</h1>'
+    +'<p>A Servinformación é uma empresa colombiana multilatina com mais de 21 anos de atuação, oferecendo soluções para análise, desenho e desenvolvimento de Sistemas de Informação Geográfica. Nosso portfólio atende mais de 700 empresas nacionais e multinacionais com soluções focadas em qualidade de dados, georreferenciamento, geomarketing e desenvolvimento de aplicações web e mobile.</p>'
+    +'<p>Desde 2013, somos representantes do Google Cloud na América Latina nas verticais de Google Cloud Platform (GCP) e Google Maps Platform (GMP). Nossa equipe orienta organizações em todas as etapas da jornada para a nuvem, com serviços profissionais nos mais altos padrões de qualidade exigidos pelo Google.</p>'
+    +'<div class="assin"><p>Atenciosamente,</p><br><p><strong>'+vend+'</strong></p><p>Especialista Google Workspace — servinformación Brasil</p><p>'+emailV+'</p></div></div>'
+    +'<div class="page pb"><h1>2. Generalidades</h1>'
+    +'<p>Este documento contém a proposta econômica de acesso aos serviços do Google Workspace para a <strong>'+cli+'</strong>, com objetivo de atender às necessidades de uma ferramenta de trabalho colaborativa, com automação de escritório, e-mail e armazenamento em nuvem.</p>'
+    +'<div class="box"><p>Esta proposta foi elaborada especificamente para <strong>'+cli+'</strong> e contempla <strong>'+usuarios+' usuários</strong>, considerando a migração de <strong>'+totalGbMig.toFixed(2)+' GB</strong> de dados.</p></div></div>'
+    +'<div class="page pb"><h1>3. Recursos do Google Workspace</h1>'
+    +'<table><tr><th>Categoria</th><th>Ferramentas</th></tr>'
+    +'<tr><td><strong>Comunicação</strong></td><td>Gmail, Google Meet, Google Chat, Google Calendar</td></tr>'
+    +'<tr><td><strong>Criação</strong></td><td>Documentos, Planilhas, Apresentações, Formulários, Sites, AppSheet</td></tr>'
+    +'<tr><td><strong>Armazenamento</strong></td><td>Google Drive, Cloud Search</td></tr>'
+    +'<tr><td><strong>Administração</strong></td><td>Admin Console, Vault, Endpoint Management</td></tr>'
+    +'<tr><td><strong>IA integrada</strong></td><td>Gemini for Workspace (conforme licença)</td></tr></table></div>'
+    +'<div class="page pb"><h1>4. Benefícios do Google Workspace</h1>'
+    +'<ul><li><strong>Produtividade:</strong> Colaboração em tempo real, edição simultânea de documentos e comunicação integrada.</li>'
+    +'<li><strong>Redução de custos:</strong> Elimine gastos com infraestrutura local e manutenção de servidores.</li>'
+    +'<li><strong>Mobilidade:</strong> Trabalhe em qualquer lugar e dispositivo com acesso seguro à internet.</li>'
+    +'<li><strong>Segurança:</strong> Informações armazenadas na infraestrutura do Google, criptografadas e replicadas globalmente.</li>'
+    +'<li><strong>Inteligência Artificial:</strong> O Gemini integrado ao Workspace auxilia na criação de textos, análise de dados e automação de tarefas.</li></ul></div>'
+    +'<div class="page pb"><h1>5. Plano de Implementação</h1>'
+    +'<p>Acompanhamos o processo de transformação tecnológica da <strong>'+cli+'</strong> na adoção da solução de comunicação e colaboração na nuvem, com metodologia de implementação por grupos.</p>'
+    +'<h2>Gestão da Mudança</h2>'
+    +'<p>Abordagem estruturada para gerenciar a transição tecnológica. Inclui plano de comunicações com peças gráficas, campanha de expectativa e materiais personalizados em português.</p>'
+    +'<h2>Treinamento</h2>'
+    +'<p>Módulos: Gmail e Agenda, Drive e Documentos, Meet e Chat, Planilhas, Apresentações, Formulários e Segurança. Todas as sessões são gravadas com acesso ao portal <strong>entrenate.servinformacion.com</strong>.</p>'
+    +'<div class="box"><p>Implementação estimada em 4 a 8 semanas para '+usuarios+' usuários, sujeita a validação do volume de dados.</p></div></div>'
+    +'<div class="page pb"><h1>6. Migração</h1>'
+    +'<h2>Ambientes a migrar</h2>'
+    +'<table><tr><th>Ambiente</th><th>Tipo</th><th>Volume</th><th>Em GB</th><th>Observação</th></tr>'+ambRowsHtml
+    +'<tr class="tr-total"><td colspan="2"><strong>Total a migrar</strong></td><td colspan="2"><strong>'+totalGbMig.toFixed(2)+' GB</strong></td><td></td></tr></table>'
+    +'<h2>Ferramenta — CloudM</h2>'
+    +'<table><tr><th>Item</th><th>Valor</th></tr>'
+    +'<tr><td>Total de dados</td><td>'+totalGbMig.toFixed(2)+' GB</td></tr>'
+    +'<tr><td>Capacidade por licença</td><td>'+cloudmGbV+' GB / licença</td></tr>'
+    +'<tr><td>Licenças necessárias</td><td>'+cloudmLics+' licenças</td></tr>'
+    +'<tr><td>Custo por licença</td><td>'+U(cloudmPrV)+'</td></tr>'
+    +'<tr class="tr-total"><td><strong>Total migração (BRL)</strong></td><td><strong>'+F(migTotal)+'</strong></td></tr></table></div>'
+    +'<div class="page pb"><h1>7. Licenças Google Workspace</h1>'
+    +'<table><tr><th>Licença</th><th>Qtd.</th><th>BRL/usuário/mês</th><th>Total/mês</th></tr>'+licRowsHtml
+    +'<tr class="tr-total"><td colspan="3"><strong>Total'+(margemLicV>0?' (com margem)':'')+'</strong></td><td><strong>'+F(licTotal)+'</strong></td></tr></table>'
+    +(servRowsHtml?'<h2>Serviços profissionais</h2><table><tr><th>Serviço</th><th>Qtd.</th><th>Valor unitário</th><th>Total</th></tr>'+servRowsHtml+'<tr class="tr-total"><td colspan="3"><strong>Total serviços</strong></td><td><strong>'+F(trainTotal+servTotal)+'</strong></td></tr></table>':'')
+    +'<h2>Resumo financeiro</h2><div class="rfin">'
+    +'<div class="rfrow"><span class="rl">Licenças GWS ('+periodoV+')</span><span>'+F(licTotal)+'</span></div>'
+    +(migTotal>0?'<div class="rfrow"><span class="rl">Migração CloudM (custo único)</span><span>'+F(migTotal)+'</span></div>':'')
+    +(trainTotal>0?'<div class="rfrow"><span class="rl">Treinamento (custo único)</span><span>'+F(trainTotal)+'</span></div>':'')
+    +(servTotal>0?'<div class="rfrow"><span class="rl">Serviços profissionais (custo único)</span><span>'+F(servTotal)+'</span></div>':'')
+    +'<div class="rfrow"><span class="rl">Investimento total 1º ano</span><span>'+F(licAnual+migTotal+trainTotal+servTotal)+'</span></div></div>'
+    +'<h2>Condições comerciais</h2>'
+    +'<ul><li>Faturado em: Reais brasileiros (BRL)</li><li>Validade da oferta: '+validadeV+' dias a partir de '+hoje+'</li>'
+    +'<li>Tempo de entrega das licenças: 5 dias úteis após assinatura do contrato</li>'
+    +'<li>Durante a vigência do contrato, não é possível reduzir licenças, apenas aumentar</li></ul>'
+    +'<div class="assin"><p>Atenciosamente,</p><br><p><strong>'+vend+'</strong></p><p>Especialista Google Workspace — servinformación Brasil</p><p>'+emailV+'</p></div></div>'
+    +'</body></html>';
+  const w=window.open('','_blank');w.document.write(html);w.document.close();
 }
 
-// ─── MODAL ──────────────────────────────────────────────────
-function openModal(){ renderResumo(); document.getElementById('modalBg').classList.add('open'); }
-function closeModal(){ document.getElementById('modalBg').classList.remove('open'); }
-function copyProposta(){
-  const el=document.getElementById('propostaTexto');
-  el.select(); document.execCommand('copy');
-  alert('Texto copiado! Abra o Google Docs e cole (Ctrl+V / Cmd+V).');
-}
-function openGDocs(){ window.open('https://docs.new','_blank'); }
-
-// ─── NAV ────────────────────────────────────────────────────
 function goTo(n){
   calc();
   document.querySelectorAll('.page').forEach((p,i)=>p.classList.toggle('active',i===n));
-  document.querySelectorAll('.step-btn').forEach((s,i)=>{
-    s.classList.remove('active','done');
-    if(i===n) s.classList.add('active');
-    else if(i<n) s.classList.add('done');
-  });
-  if(n===4){ renderTrainCards(); }
-  if(n===6){ renderResumo(); }
+  document.querySelectorAll('.step-btn').forEach((s,i)=>{s.classList.remove('active','done');if(i===n)s.classList.add('active');else if(i<n)s.classList.add('done');});
+  if(n===4){highlightFaixaByUsers();updateTrainCards();}
+  if(n===6)renderResumo();
   window.scrollTo({top:0,behavior:'smooth'});
 }
 
-// ─── INIT ────────────────────────────────────────────────────
-document.getElementById('topDate').textContent = new Date().toLocaleDateString('pt-BR',{weekday:'long',day:'numeric',month:'long',year:'numeric'});
-toggleMigType();
-renderEnvTable();
-highlightFaixaByUsers();
-calc();
+document.getElementById('topDate').textContent=new Date().toLocaleDateString('pt-BR',{weekday:'long',day:'numeric',month:'long',year:'numeric'});
+toggleMigType();renderEnvTable();highlightFaixaByUsers();calc();
 </script>
 </body>
 </html>
